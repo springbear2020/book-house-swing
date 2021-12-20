@@ -736,7 +736,7 @@ public class MainFrame extends JFrame {
         @Override
         public void paint(Graphics g) {
             super.paint(g);
-            g.drawImage(Toolkit.getDefaultToolkit().getImage("resource\\image\\BeFree.jpg"), 0, 0, this.getWidth(), this.getHeight(), null);
+            g.drawImage(Toolkit.getDefaultToolkit().getImage("image\\BeFree.jpg"), 0, 0, this.getWidth(), this.getHeight(), null);
         }
     }
 }

@@ -25,7 +25,12 @@ import java.util.Random;
  * @date 2021-12-18 22:45
  */
 public class AdminFrame extends JFrame {
+    /**
+     * The content of the main panel
+     */
     private final JTabbedPane tabbedPane;
+    private final JPanel contentPane;
+    private final JPanel backgroundPanel;
 
     /**
      * The content of the add book panel
@@ -69,10 +74,13 @@ public class AdminFrame extends JFrame {
         setLocationRelativeTo(null);
 
         // The main panel of the frame
-        JPanel contentPane = new JPanel();
+        contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
         contentPane.setLayout(new CardLayout(0, 0));
+        // The background panel of main panel
+        backgroundPanel = new BackgroundPanel();
+        contentPane.add(backgroundPanel);
         // The tab of the main panel
         tabbedPane = new JTabbedPane(JTabbedPane.TOP);
         contentPane.add(tabbedPane);
@@ -115,6 +123,7 @@ public class AdminFrame extends JFrame {
     private class AddCodeMenuListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
+            contentPane.remove(backgroundPanel);
             tabbedPane.removeAll();
 
             // The mail panel of the add register code
@@ -209,6 +218,7 @@ public class AdminFrame extends JFrame {
     private class AddBookMenuListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
+            contentPane.remove(backgroundPanel);
             tabbedPane.removeAll();
 
             // The main panel of the add book menu
@@ -384,6 +394,17 @@ public class AdminFrame extends JFrame {
             textKeyword.setText("");
             radioButtonOn.setSelected(true);
             radioButtonOff.setSelected(false);
+        }
+    }
+
+    /**
+     * Custom background panel, draw a background picture
+     */
+    private static class BackgroundPanel extends JPanel {
+        @Override
+        public void paint(Graphics g) {
+            super.paint(g);
+            g.drawImage(Toolkit.getDefaultToolkit().getImage("resource\\image\\BeFree.jpg"), 0, 0, this.getWidth(), this.getHeight(), null);
         }
     }
 

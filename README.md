@@ -1,3 +1,7 @@
+> Gitee 开源项目：[e-book resource service system](https://gitee.com/Spring-_-Bear/ebrss)
+
+
+
 
 # 应用背景描述
 
@@ -712,4 +716,3 @@ try {
 - 数据库备份成功，对应目录生成数据库备份文件
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/c43f1be7aa5043a99c3dfce1042dafc9.png#pic_center)
-
