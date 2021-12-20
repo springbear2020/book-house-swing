@@ -252,7 +252,6 @@ public class Client {
 
             // Receive the feedback from the server, true or false
             String feedback = bufferedReader.readLine();
-            System.out.println(feedback);
             return "true".equals(feedback);
         } catch (IOException e) {
             e.printStackTrace();
