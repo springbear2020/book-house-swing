@@ -3,7 +3,7 @@ package com.springbear.ebrss.entity;
 import java.io.Serializable;
 
 /**
- * POJO class -> Book table of database named ebrss
+ * POJO class - Book table of database named ebrss
  *
  * @author Spring-_-Bear
  * @date 2021-12-18 23:11

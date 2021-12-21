@@ -1,0 +1,6 @@
+com.springbear.ebrss.client
+com.springbear.ebrss.entity
+com.springbear.ebrss.model
+com.springbear.ebrss.service
+com.springbear.ebrss.ui
+com.springbear.ebrss.util

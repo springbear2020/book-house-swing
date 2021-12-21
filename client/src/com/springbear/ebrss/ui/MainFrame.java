@@ -67,6 +67,7 @@ public class MainFrame extends JFrame {
 
     /**
      * Create the frame
+     * @param loginUsername User who login in the service system
      */
     public MainFrame(String loginUsername) {
         this.loginUsername = loginUsername;

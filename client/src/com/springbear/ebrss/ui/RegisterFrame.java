@@ -199,6 +199,14 @@ public class RegisterFrame extends JFrame {
     /**
      * Determine whether there is a null value in the registration input
      *
+     * @param username  username
+     * @param password1 password1
+     * @param password2 password2
+     * @param name      user's real name
+     * @param idCard    user's ID card
+     * @param phone     user's phone number
+     * @param mail      user's email
+     * @param code      user's used register code
      * @return true - some content is empty of false
      */
     private boolean judgeInputContentNull(String username, String password1, String password2, String name, String idCard, String phone, String mail, String code) {
@@ -240,7 +248,14 @@ public class RegisterFrame extends JFrame {
     /**
      * Determine whether the registered input content conforms to the format
      *
-     * @return true - the format is right or false
+     * @param username  username
+     * @param password1 password1
+     * @param password2 password2
+     * @param name      user's real name
+     * @param idCard    user's id card
+     * @param phone     user's phone
+     * @param mail      user's email
+     * @return true - all information is valid
      */
     private boolean judgeInputContentValid(String username, String password1, String password2, String name, String idCard, String phone, String mail) {
         /*

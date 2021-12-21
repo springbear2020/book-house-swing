@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * POJO class -> Favorite table of database named ebrss
+ * POJO class - Favorite table of database named ebrss
  *
  * @author Spring-_-Bear
  * @date 2021-12-19 10:54
