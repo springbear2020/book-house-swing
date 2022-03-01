@@ -14,7 +14,7 @@ public class DatabaseUtil {
     /**
      * The path of the config file
      */
-    private static final String PATH = "config\\druid.properties";
+    private static final String PATH = "server\\config\\druid.properties";
     /**
      * The ip of server
      */

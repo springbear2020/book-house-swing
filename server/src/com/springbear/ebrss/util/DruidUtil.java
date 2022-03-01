@@ -3,8 +3,6 @@ package com.springbear.ebrss.util;
 import com.alibaba.druid.pool.DruidDataSourceFactory;
 
 import javax.sql.DataSource;
-import javax.swing.*;
-import java.awt.*;
 import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -20,7 +18,7 @@ import java.util.Properties;
  */
 public class DruidUtil {
     static DataSource dataSource;
-    static String path = "config\\druid.properties";
+    static String path = "server\\config\\druid.properties";
 
     // Read the config info from config file
     static {

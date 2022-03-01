@@ -29,7 +29,7 @@ public class LoginFrame extends JFrame {
         // Set the properties of the frame
         setSize(444, 300);
         setTitle("User login");
-        setIconImage(Toolkit.getDefaultToolkit().getImage("image\\BeFree.jpg"));
+        setIconImage(Toolkit.getDefaultToolkit().getImage("client\\image\\BeFree.jpg"));
         setResizable(false);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

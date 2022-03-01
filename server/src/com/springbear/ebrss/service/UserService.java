@@ -39,7 +39,7 @@ public class UserService {
                 user.getSex(), user.getIdCard(), user.getPhone(),
                 user.getMail(), user.getRegisterCode()
         };
-        String sql = "INSERT INTO User(username,password,name,sex,idCard,phone,mail,registerCode) VALUES(?,?,?,?,?,?,?,?);";
+        String sql = "INSERT INTO `User`(username,password,name,sex,idCard,phone,mail,registerCode) VALUES(?,?,?,?,?,?,?,?);";
         return userDao.update(sql, params) == 1;
     }
 

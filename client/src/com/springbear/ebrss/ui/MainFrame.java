@@ -77,7 +77,7 @@ public class MainFrame extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(777, 777);
         setResizable(false);
-        setIconImage(Toolkit.getDefaultToolkit().getImage("image\\BeFree.jpg"));
+        setIconImage(Toolkit.getDefaultToolkit().getImage("client\\image\\BeFree.jpg"));
         setLocationRelativeTo(null);
 
         // The content of the menuBar
@@ -737,7 +737,7 @@ public class MainFrame extends JFrame {
         @Override
         public void paint(Graphics g) {
             super.paint(g);
-            g.drawImage(Toolkit.getDefaultToolkit().getImage("image\\BeFree.jpg"), 0, 0, this.getWidth(), this.getHeight(), null);
+            g.drawImage(Toolkit.getDefaultToolkit().getImage("client\\image\\BeFree.jpg"), 0, 0, this.getWidth(), this.getHeight(), null);
         }
     }
 }

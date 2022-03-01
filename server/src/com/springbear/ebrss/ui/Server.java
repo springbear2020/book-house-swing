@@ -19,7 +19,7 @@ public class Server {
     /**
      * The path of the config file
      */
-    private static final String PATH = "config\\port.properties";
+    private static final String PATH = "server\\config\\port.properties";
     /**
      * The listening port of the server
      */

@@ -18,7 +18,7 @@ public class Client {
     /**
      * The path of the server config file
      */
-    private static final String PATH = "config\\server.properties";
+    private static final String PATH = "client\\config\\server.properties";
     /**
      * The ip of the server
      */
