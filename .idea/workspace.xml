@@ -1,36 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6986a3cb-c254-4b2e-97e9-107ab0c2bc64" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server/server.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ebrss.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.pptx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/client/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/image/BeFree.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/resources/image/BeFree.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/com/springbear/ebrss/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/com/springbear/ebrss/service/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/com/springbear/ebrss/ui/LoginFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/com/springbear/ebrss/ui/LoginFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/com/springbear/ebrss/ui/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/com/springbear/ebrss/ui/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/com/springbear/ebrss/ui/RegisterFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/com/springbear/ebrss/ui/RegisterFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/ui/LoginFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/ui/LoginFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/ui/MainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/ui/MainFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/ui/RegisterFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/ui/RegisterFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/service/CodeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/service/CodeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/ui/AdminFrame$BackgroundPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/ui/AdminFrame$BackgroundPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/ui/AdminFrame$GatherButtonListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/ui/AdminFrame$GatherButtonListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/ui/AdminFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/ui/AdminFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/server/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/config/druid.properties" beforeDir="false" afterPath="$PROJECT_DIR$/server/config/druid.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/resource/image/BeFree.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/server/resources/image/BeFree.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/resource/sql/ebrss.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/com/springbear/ebrss/service/CodeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/com/springbear/ebrss/service/CodeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/com/springbear/ebrss/ui/AdminFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/com/springbear/ebrss/ui/AdminFrame.java" afterDir="false" />
-    </list>
+    <list default="true" id="6986a3cb-c254-4b2e-97e9-107ab0c2bc64" name="Default Changelist" comment="Can't start the ebrss project because lost the .iml config file, then rebuild the whole project and change some info, it can run normally on my PC now." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -136,8 +107,18 @@
       <option name="presentableId" value="Default" />
       <updated>1646624221922</updated>
       <workItem from="1646624223274" duration="259000" />
-      <workItem from="1646633949241" duration="3408000" />
+      <workItem from="1646633949241" duration="3732000" />
+      <workItem from="1646637921023" duration="361000" />
+      <workItem from="1646638565072" duration="119000" />
     </task>
+    <task id="LOCAL-00001" summary="Can't start the ebrss project because lost the .iml config file, then rebuild the whole project and change some info, it can run normally on my PC now.">
+      <created>1646637710709</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1646637710709</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,5 +135,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Can't start the ebrss project because lost the .iml config file, then rebuild the whole project and change some info, it can run normally on my PC now." />
+    <option name="LAST_COMMIT_MESSAGE" value="Can't start the ebrss project because lost the .iml config file, then rebuild the whole project and change some info, it can run normally on my PC now." />
   </component>
 </project>
