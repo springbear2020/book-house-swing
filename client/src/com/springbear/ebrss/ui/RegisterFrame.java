@@ -38,7 +38,7 @@ public class RegisterFrame extends JFrame {
     public RegisterFrame() {
         // Set the properties of the frame
         setTitle("User register");
-        setIconImage(Toolkit.getDefaultToolkit().getImage("client\\image\\BeFree.jpg"));
+        setIconImage(Toolkit.getDefaultToolkit().getImage("client\\resources\\image\\BeFree.jpg"));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(555, 555);
         setLocationRelativeTo(null);

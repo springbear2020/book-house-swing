@@ -42,7 +42,7 @@ public class CodeService {
      */
     public int queryCurrentIdValue() {
         Object[] params = new Object[]{};
-        String sql = "SELECT MAX(codeId) FROM Code FOR UPDATE;";
+        String sql = "SELECT MAX(codeId) FROM `code` FOR UPDATE;";
         // Solve the NullPointerException when has no record in the table
         if (codeDao.getCell(sql, params) == null) {
             return 1;
@@ -57,7 +57,7 @@ public class CodeService {
      */
     public void resetToOldId(int oldId) {
         Object[] params = new Object[]{oldId};
-        String sql = "ALTER TABLE Code AUTO_INCREMENT = ?";
+        String sql = "ALTER TABLE `code` AUTO_INCREMENT = ?";
         codeDao.update(sql, params);
     }
 }

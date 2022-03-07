@@ -18,7 +18,7 @@ public class ReceiveByteData implements Runnable {
     /**
      * The file save path
      */
-    private static String fileSavePath = "d:\\upload\\";
+    private static String fileSavePath = "d:\\";
     private final BufferedReader bufferedReader;
     private final Socket socket;
 

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6986a3cb-c254-4b2e-97e9-107ab0c2bc64" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/server/server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ebrss.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/client/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/image/BeFree.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/resources/image/BeFree.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/com/springbear/ebrss/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/com/springbear/ebrss/service/BookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/com/springbear/ebrss/ui/LoginFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/com/springbear/ebrss/ui/LoginFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/com/springbear/ebrss/ui/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/com/springbear/ebrss/ui/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/com/springbear/ebrss/ui/RegisterFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/com/springbear/ebrss/ui/RegisterFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/ui/LoginFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/ui/LoginFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/ui/MainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/ui/MainFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/ui/RegisterFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/ui/RegisterFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/service/CodeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/service/CodeService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/ui/AdminFrame$BackgroundPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/ui/AdminFrame$BackgroundPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/ui/AdminFrame$GatherButtonListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/ui/AdminFrame$GatherButtonListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/ui/AdminFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/ui/AdminFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/server/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/config/druid.properties" beforeDir="false" afterPath="$PROJECT_DIR$/server/config/druid.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/resource/image/BeFree.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/server/resources/image/BeFree.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/resource/sql/ebrss.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/com/springbear/ebrss/service/CodeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/com/springbear/ebrss/service/CodeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/com/springbear/ebrss/ui/AdminFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/com/springbear/ebrss/ui/AdminFrame.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="262adEhEQH5hRV8hAdXfxLjtJlS" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/server/resources/sql" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.10548526" />
+    <property name="project.structure.side.proportion" value="0.3430303" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Bear\project\ebrss\server\resources\sql" />
+      <recent name="D:\Bear\project\ebrss\client" />
+      <recent name="D:\Bear\project\ebrss\server" />
+      <recent name="D:\Bear\project\ebrss\server\config" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Bear\project\ebrss\client\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.LoginFrame">
+    <configuration name="AdminFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.springbear.ebrss.ui.AdminFrame" />
+      <module name="server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.springbear.ebrss.ui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.springbear.ebrss.ui.LoginFrame" />
+      <module name="client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.springbear.ebrss.ui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.springbear.ebrss.ui.Server" />
+      <module name="server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.springbear.ebrss.ui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.LoginFrame" />
+        <item itemvalue="Application.Server" />
+        <item itemvalue="Application.AdminFrame" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6986a3cb-c254-4b2e-97e9-107ab0c2bc64" name="Default Changelist" comment="" />
+      <created>1646624221922</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1646624221922</updated>
+      <workItem from="1646624223274" duration="259000" />
+      <workItem from="1646633949241" duration="3408000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>

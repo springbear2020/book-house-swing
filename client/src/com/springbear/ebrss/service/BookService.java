@@ -6,7 +6,7 @@ import com.springbear.ebrss.entity.Book;
 import java.util.List;
 
 /**
- * Book service calss
+ * Book service class
  *
  * @author Spring-_-Bear
  * @date 2021-12-19 09:18

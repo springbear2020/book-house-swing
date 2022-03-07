@@ -47,7 +47,7 @@ public class AdminFrame extends JFrame {
     private JTextField textKeyword;
     private JRadioButton radioButtonOn;
     private JRadioButton radioButtonOff;
-    private static String url = "d:\\book\\";
+    private static String url = "D:\\Bear\\mine\\pdf\\";
 
     /**
      * The content of the add register code panel
@@ -67,7 +67,7 @@ public class AdminFrame extends JFrame {
     public AdminFrame() {
         // Set the properties of the frame
         setTitle("\u7BA1\u7406\u5458\u754C\u9762");
-        setIconImage(Toolkit.getDefaultToolkit().getImage("server\\resource\\image\\BeFree.jpg"));
+        setIconImage(Toolkit.getDefaultToolkit().getImage("server\\resources\\image\\BeFree.jpg"));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(777, 777);
         setResizable(false);
@@ -372,7 +372,7 @@ public class AdminFrame extends JFrame {
             } else {
                 JOptionPane.showMessageDialog(null, "Failed to add book, try again later", "ERROR", JOptionPane.ERROR_MESSAGE);
             }
-            url = "d:\\book\\";
+            url = "D:\\Bear\\mine\\pdf";
         }
     }
 
@@ -404,7 +404,7 @@ public class AdminFrame extends JFrame {
         @Override
         public void paint(Graphics g) {
             super.paint(g);
-            g.drawImage(Toolkit.getDefaultToolkit().getImage("server\\resource\\image\\BeFree.jpg"), 0, 0, this.getWidth(), this.getHeight(), null);
+            g.drawImage(Toolkit.getDefaultToolkit().getImage("server\\resources\\image\\BeFree.jpg"), 0, 0, this.getWidth(), this.getHeight(), null);
         }
     }
 
