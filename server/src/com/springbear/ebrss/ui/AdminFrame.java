@@ -6,6 +6,7 @@ import com.springbear.ebrss.model.CustomTableModel;
 import com.springbear.ebrss.service.BookService;
 import com.springbear.ebrss.service.CodeService;
 import com.springbear.ebrss.util.DatabaseUtil;
+import com.springbear.ebrss.util.FileUtil;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -47,7 +48,7 @@ public class AdminFrame extends JFrame {
     private JTextField textKeyword;
     private JRadioButton radioButtonOn;
     private JRadioButton radioButtonOff;
-    private static String url = "D:\\Bear\\mine\\pdf\\";
+    private static String url = FileUtil.getBookPath();
 
     /**
      * The content of the add register code panel
@@ -372,7 +373,7 @@ public class AdminFrame extends JFrame {
             } else {
                 JOptionPane.showMessageDialog(null, "Failed to add book, try again later", "ERROR", JOptionPane.ERROR_MESSAGE);
             }
-            url = "D:\\Bear\\mine\\pdf";
+            url = FileUtil.getBookPath();
         }
     }
 

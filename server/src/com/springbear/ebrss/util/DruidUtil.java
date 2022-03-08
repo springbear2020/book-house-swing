@@ -18,13 +18,12 @@ import java.util.Properties;
  */
 public class DruidUtil {
     static DataSource dataSource;
-    static String path = "server\\config\\druid.properties";
 
     // Read the config info from config file
     static {
         Properties properties = new Properties();
         try {
-            properties.load(new FileInputStream(path));
+            properties.load(new FileInputStream("server\\config\\druid.properties"));
             dataSource = DruidDataSourceFactory.createDataSource(properties);
         } catch (Exception e) {
             e.printStackTrace();

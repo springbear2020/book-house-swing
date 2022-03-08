@@ -1,6 +1,7 @@
 package com.springbear.ebrss.ui;
 
 import com.springbear.ebrss.thread.HandleRequest;
+import com.springbear.ebrss.util.FileUtil;
 import com.springbear.ebrss.util.ThreadPoolUtil;
 
 import java.io.FileInputStream;
@@ -12,29 +13,15 @@ import java.util.Properties;
 
 /**
  * Server - communicate with the client
+ *
  * @author Spring-_-Bear
  * @date 2021-12-18 20:46
  */
 public class Server {
     /**
-     * The path of the config file
-     */
-    private static final String PATH = "server\\config\\port.properties";
-    /**
      * The listening port of the server
      */
-    private static int port;
-
-    // Read the config info from the config file
-    static {
-        Properties properties = new Properties();
-        try {
-            properties.load(new FileInputStream(PATH));
-            port = Integer.parseInt(properties.getProperty("port"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+    private static final Integer PORT = FileUtil.getServerListeningPort();
 
     /**
      * The amount of the clients which has connected with the server
@@ -50,7 +37,7 @@ public class Server {
         Socket socket = null;
 
         try {
-            serverSocket = new ServerSocket(port);
+            serverSocket = new ServerSocket(PORT);
             System.out.println("The server has started, waiting to connect···");
 
             // Wait for the connection from the client in a loop

@@ -2,6 +2,7 @@ package com.springbear.ebrss.util;
 
 import java.io.*;
 import java.util.Objects;
+import java.util.Properties;
 
 /**
  * File operation tools class
@@ -10,6 +11,34 @@ import java.util.Objects;
  * @date 2021-12-19 10:06
  */
 public class FileUtil {
+    private static String bookSavePath = null;
+    private static Integer serverListeningPort = null;
+    private static String bookPath = null;
+
+    static {
+        Properties properties = new Properties();
+        try {
+            properties.load(new FileInputStream("server\\config\\config.properties"));
+            bookSavePath = properties.getProperty("bookSavePath");
+            serverListeningPort = Integer.parseInt(properties.getProperty("serverListeningPort"));
+            bookPath = properties.getProperty("bookPath");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static String getBookSavePath() {
+        return bookSavePath;
+    }
+
+    public static Integer getServerListeningPort() {
+        return serverListeningPort;
+    }
+
+    public static String getBookPath() {
+        return bookPath;
+    }
+
     /**
      * Get the byte data of the file from the file path on the disk
      *

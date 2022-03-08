@@ -18,7 +18,7 @@ public class ReceiveByteData implements Runnable {
     /**
      * The file save path
      */
-    private static String fileSavePath = "d:\\";
+    private static String fileSavePath = FileUtil.getBookSavePath();
     private final BufferedReader bufferedReader;
     private final Socket socket;
 
@@ -61,7 +61,7 @@ public class ReceiveByteData implements Runnable {
             // Save the byte data to the specific path on the disk then send client a feedback
             if (FileUtil.saveFileToDisk(fileData, fileSavePath)) {
                 feedBack = "true";
-                fileSavePath = "d:\\upload\\";
+                fileSavePath = FileUtil.getBookSavePath();
             }
 
             // Send a feedback to the client
