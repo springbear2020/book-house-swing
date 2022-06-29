@@ -22,7 +22,7 @@ public class DruidUtil {
     private static String password;
     private static String database;
     private static String serverIp;
-    private static String serverListeningPort;
+    private static String listeningPort;
 
 
     public static String getUsername() {
@@ -41,8 +41,8 @@ public class DruidUtil {
         return serverIp;
     }
 
-    public static String getServerListeningPort() {
-        return serverListeningPort;
+    public static String getListeningPort() {
+        return listeningPort;
     }
 
     // Read the config info from config file
@@ -56,7 +56,7 @@ public class DruidUtil {
             password = properties.getProperty("password");
             database = properties.getProperty("database");
             serverIp = properties.getProperty("serverIp");
-            serverListeningPort = properties.getProperty("serverListeningPort");
+            listeningPort = properties.getProperty("serverListeningPort");
         } catch (Exception e) {
             e.printStackTrace();
         }

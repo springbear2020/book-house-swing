@@ -67,7 +67,7 @@ public class AdminFrame extends JFrame {
     public AdminFrame() {
         // Set the properties of the frame
         setTitle("\u7BA1\u7406\u5458\u754C\u9762");
-        setIconImage(Toolkit.getDefaultToolkit().getImage(FileUtil.getBeFreeFilePath()));
+        setIconImage(Toolkit.getDefaultToolkit().getImage(FileUtil.getBeFreeUrl()));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(777, 777);
         setResizable(false);
@@ -402,11 +402,7 @@ public class AdminFrame extends JFrame {
         @Override
         public void paint(Graphics g) {
             super.paint(g);
-            g.drawImage(Toolkit.getDefaultToolkit().getImage(FileUtil.getBeFreeFilePath()), 0, 0, this.getWidth(), this.getHeight(), null);
+            g.drawImage(Toolkit.getDefaultToolkit().getImage(FileUtil.getBeFreeUrl()), 0, 0, this.getWidth(), this.getHeight(), null);
         }
-    }
-
-    public static void main(String[] args) {
-        new AdminFrame().setVisible(true);
     }
 }

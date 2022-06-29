@@ -1,6 +1,7 @@
 package com.springbear.ebrss.util;
 
 import java.io.*;
+import java.net.URL;
 import java.util.Objects;
 
 /**
@@ -79,5 +80,12 @@ public class FileUtil {
                 e.printStackTrace();
             }
         }
+    }
+
+    /**
+     * Get the BeFree.jpg file url
+     */
+    public static URL getBeFreeUrl() {
+        return FileUtil.class.getClassLoader().getResource("image/BeFree.jpg");
     }
 }

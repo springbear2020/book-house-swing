@@ -1,11 +1,9 @@
 package com.springbear.ebrss.client;
 
-import com.springbear.ebrss.util.FileUtil;
 
 import javax.swing.*;
 import java.io.*;
 import java.net.Socket;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -25,12 +23,7 @@ public class Client {
     /**
      * The listening port of the server
      */
-    private static int serverPort;
-    private static String beFreeFilePath;
-
-    public static String getBeFreeFilePath() {
-        return beFreeFilePath;
-    }
+    private static Integer serverPort;
 
     // Load the config file then read the config info of the server
     static {
@@ -40,9 +33,6 @@ public class Client {
             properties.load(resourceAsStream);
             serverIp = properties.getProperty("serverIp");
             serverPort = Integer.parseInt(properties.getProperty("serverPort"));
-            URL beFreeUrl = Client.class.getClassLoader().getResource("image/Befree.jpg");
-            String beFreePath = beFreeUrl.toString();
-            beFreeFilePath = beFreePath.substring(6);
         } catch (IOException e) {
             e.printStackTrace();
         }

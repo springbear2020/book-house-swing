@@ -1,7 +1,9 @@
 package com.springbear.ebrss;
 
 import com.springbear.ebrss.thread.HandleRequest;
+import com.springbear.ebrss.ui.AdminFrame;
 import com.springbear.ebrss.util.DruidUtil;
+import com.springbear.ebrss.util.FileUtil;
 import com.springbear.ebrss.util.ThreadPoolUtil;
 
 import java.io.IOException;
@@ -19,7 +21,7 @@ public class Server {
     /**
      * The listening port of the server
      */
-    private static final Integer PORT = Integer.parseInt(DruidUtil.getServerListeningPort());
+    private static final Integer PORT = Integer.parseInt(DruidUtil.getListeningPort());
 
     /**
      * The amount of the clients which has connected with the server
@@ -31,6 +33,9 @@ public class Server {
     }
 
     public static void main(String[] args) {
+        // Open the admin frame
+        new AdminFrame().setVisible(true);
+
         ServerSocket serverSocket = null;
         Socket socket = null;
 

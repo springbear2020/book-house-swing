@@ -1,11 +1,11 @@
 package com.springbear.ebrss;
 
-import com.springbear.ebrss.client.Client;
 import com.springbear.ebrss.entity.User;
 import com.springbear.ebrss.model.RequestEnum;
 import com.springbear.ebrss.service.UserService;
 import com.springbear.ebrss.ui.MainFrame;
 import com.springbear.ebrss.ui.RegisterFrame;
+import com.springbear.ebrss.util.FileUtil;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -32,7 +32,7 @@ public class LoginFrame extends JFrame {
         // Set the properties of the frame
         setSize(444, 300);
         setTitle("User login");
-        setIconImage(Toolkit.getDefaultToolkit().getImage(Client.getBeFreeFilePath()));
+        setIconImage(Toolkit.getDefaultToolkit().getImage(FileUtil.getBeFreeUrl()));
         setResizable(false);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

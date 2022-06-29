@@ -11,30 +11,27 @@ import java.util.Objects;
  * @date 2021-12-19 10:06
  */
 public class FileUtil {
-    private static final String bookPath;
-    private static final String fileSavePath;
-    private static final String beFreeFilePath;
+    private static String bookPath;
+    private static String uploadPath;
+
+    public static URL getBeFreeUrl() {
+        return FileUtil.class.getClassLoader().getResource("image/BeFree.jpg");
+    }
 
     public static String getBookPath() {
         return bookPath;
     }
 
-    public static String getFileSavePath() {
-        return fileSavePath;
-    }
-
-    public static String getBeFreeFilePath() {
-        return beFreeFilePath;
+    public static String getUploadPath() {
+        return uploadPath;
     }
 
     static {
-        URL beFreeUrl = FileUtil.class.getClassLoader().getResource("image/Befree.jpg");
-        String beFreePath = beFreeUrl.toString();
-        beFreeFilePath = beFreePath.substring(6);
+        String beFreePath = getBeFreeUrl().toString();
         int targetEndIndex = beFreePath.indexOf("image");
         String targetPath = beFreePath.substring(6, targetEndIndex);
         bookPath = targetPath + "book/";
-        fileSavePath = targetPath + "upload/";
+        uploadPath = targetPath + "upload/";
     }
 
     /**

@@ -1,12 +1,12 @@
 package com.springbear.ebrss.ui;
 
 import com.springbear.ebrss.LoginFrame;
-import com.springbear.ebrss.client.Client;
 import com.springbear.ebrss.entity.Code;
 import com.springbear.ebrss.entity.User;
 import com.springbear.ebrss.model.RequestEnum;
 import com.springbear.ebrss.service.CodeService;
 import com.springbear.ebrss.service.UserService;
+import com.springbear.ebrss.util.FileUtil;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -40,7 +40,7 @@ public class RegisterFrame extends JFrame {
     public RegisterFrame() {
         // Set the properties of the frame
         setTitle("User register");
-        setIconImage(Toolkit.getDefaultToolkit().getImage(Client.getBeFreeFilePath()));
+        setIconImage(Toolkit.getDefaultToolkit().getImage(FileUtil.getBeFreeUrl()));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(555, 555);
         setLocationRelativeTo(null);

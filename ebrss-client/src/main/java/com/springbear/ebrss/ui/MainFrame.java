@@ -1,7 +1,6 @@
 package com.springbear.ebrss.ui;
 
 import com.springbear.ebrss.LoginFrame;
-import com.springbear.ebrss.client.Client;
 import com.springbear.ebrss.entity.Book;
 import com.springbear.ebrss.entity.Favorite;
 import com.springbear.ebrss.entity.Record;
@@ -69,6 +68,7 @@ public class MainFrame extends JFrame {
 
     /**
      * Create the frame
+     *
      * @param loginUsername User who login in the service system
      */
     public MainFrame(String loginUsername) {
@@ -79,7 +79,7 @@ public class MainFrame extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(777, 777);
         setResizable(false);
-        setIconImage(Toolkit.getDefaultToolkit().getImage(Client.getBeFreeFilePath()));
+        setIconImage(Toolkit.getDefaultToolkit().getImage(FileUtil.getBeFreeUrl()));
         setLocationRelativeTo(null);
 
         // The content of the menuBar
@@ -739,7 +739,7 @@ public class MainFrame extends JFrame {
         @Override
         public void paint(Graphics g) {
             super.paint(g);
-            g.drawImage(Toolkit.getDefaultToolkit().getImage(Client.getBeFreeFilePath()), 0, 0, this.getWidth(), this.getHeight(), null);
+            g.drawImage(Toolkit.getDefaultToolkit().getImage(FileUtil.getBeFreeUrl()), 0, 0, this.getWidth(), this.getHeight(), null);
         }
     }
 }

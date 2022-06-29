@@ -2,171 +2,28 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="ebrss-client:jar" />
+      <artifact name="ebrss-server:jar" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6986a3cb-c254-4b2e-97e9-107ab0c2bc64" name="Default Changelist" comment="Modify the server and client modules into maven module to packaging into a .jar compress file to running.&#10;Add the project build process to help someone run it correctly.">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/ebrss_client_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_1_1_10.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_11_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_dbutils_commons_dbutils_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_27.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ebrss-client/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ebrss-client/ebrss-client.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ebrss-client/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ebrss-server/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ebrss-server/ebrss-server.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ebrss-server/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ebrss-server/src/main/java/com/springbear/ebrss/util/DatabaseUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ebrss-server/src/main/resources/book/.placeholder" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ebrss-server/src/main/resources/book/Java并发编程的艺术.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ebrss-server/src/main/resources/druid.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ebrss-server/src/main/resources/upload/.placeholder" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="6986a3cb-c254-4b2e-97e9-107ab0c2bc64" name="Default Changelist" comment="Modify the server and client modules into maven module to packaging into a .jar compress file to running and fix some bugs.&#10;Add the project build process to help someone run it correctly.">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/ebrss_client_jar.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/client.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/config/server.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-client/src/main/resources/server.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/resources/image/BeFree.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-client/src/main/resources/image/BeFree.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/com/springbear/ebrss/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-client/src/main/java/com/springbear/ebrss/client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/com/springbear/ebrss/entity/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-client/src/main/java/com/springbear/ebrss/entity/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/com/springbear/ebrss/entity/Code.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-client/src/main/java/com/springbear/ebrss/entity/Code.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/com/springbear/ebrss/entity/Favorite.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-client/src/main/java/com/springbear/ebrss/entity/Favorite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/com/springbear/ebrss/entity/Record.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-client/src/main/java/com/springbear/ebrss/entity/Record.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/com/springbear/ebrss/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-client/src/main/java/com/springbear/ebrss/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/com/springbear/ebrss/model/CustomTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-client/src/main/java/com/springbear/ebrss/model/CustomTableModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/com/springbear/ebrss/model/RequestEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-client/src/main/java/com/springbear/ebrss/model/RequestEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/com/springbear/ebrss/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-client/src/main/java/com/springbear/ebrss/service/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/com/springbear/ebrss/service/CodeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-client/src/main/java/com/springbear/ebrss/service/CodeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/com/springbear/ebrss/service/FavoriteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-client/src/main/java/com/springbear/ebrss/service/FavoriteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/com/springbear/ebrss/service/RecordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-client/src/main/java/com/springbear/ebrss/service/RecordService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/com/springbear/ebrss/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-client/src/main/java/com/springbear/ebrss/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/com/springbear/ebrss/ui/LoginFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-client/src/main/java/com/springbear/ebrss/LoginFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/com/springbear/ebrss/ui/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-client/src/main/java/com/springbear/ebrss/ui/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/com/springbear/ebrss/ui/RegisterFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-client/src/main/java/com/springbear/ebrss/ui/RegisterFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/com/springbear/ebrss/util/FileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-client/src/main/java/com/springbear/ebrss/util/FileUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/client/Client.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/entity/Book.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/entity/Code.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/entity/Favorite.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/entity/Record.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/entity/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/model/CustomTableModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/model/RequestEnum.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/service/BookService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/service/CodeService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/service/FavoriteService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/service/RecordService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/service/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/ui/LoginFrame$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/ui/LoginFrame$LoginButtonListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/ui/LoginFrame$RegisterButtonListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/ui/LoginFrame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/ui/MainFrame$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/ui/MainFrame$AddFavoritesButtonListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/ui/MainFrame$BackgroundPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/ui/MainFrame$BookDownloadMenuListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/ui/MainFrame$BookDownloadPanelDownLoadButtonListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/ui/MainFrame$FavoriteCancelButtonListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/ui/MainFrame$FavoriteMenuListener$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/ui/MainFrame$FavoriteMenuListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/ui/MainFrame$FavoritePanelDownloadButtonListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/ui/MainFrame$LogoutButtonListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/ui/MainFrame$ManageAccountButtonListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/ui/MainFrame$ModifyButtonListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/ui/MainFrame$RecordMenuListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/ui/MainFrame$SearchButtonListener$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/ui/MainFrame$SearchButtonListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/ui/MainFrame$UploadMenuListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/ui/MainFrame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/ui/RegisterFrame$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/ui/RegisterFrame$LoginButtonListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/ui/RegisterFrame$RegisterButtonListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/ui/RegisterFrame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/client/com/springbear/ebrss/util/FileUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/dao/BasicDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/dao/BookDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/dao/CodeDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/dao/FavoriteDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/dao/RecordDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/dao/UserDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/entity/Book.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/entity/Code.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/entity/Favorite.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/entity/Record.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/entity/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/model/CustomTableModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/model/RequestEnum.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/service/BookService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/service/CodeService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/service/FavoriteService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/service/RecordService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/service/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/thread/HandleRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/thread/ReceiveByteData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/thread/SendByteData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/thread/SendFeedback.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/thread/SendObjects.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/ui/AdminFrame$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/ui/AdminFrame$AddBookMenuListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/ui/AdminFrame$AddCodeButtonListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/ui/AdminFrame$AddCodeMenuListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/ui/AdminFrame$BackgroundPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/ui/AdminFrame$BackupMenuListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/ui/AdminFrame$GatherButtonListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/ui/AdminFrame$GenerateCodeButtonListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/ui/AdminFrame$ResetButtonListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/ui/AdminFrame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/ui/Server.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/util/DatabaseUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/util/DruidUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/util/FileUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/com/springbear/ebrss/util/ThreadPoolUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/config/config.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/config/druid.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/lib/commons-dbutils-1.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/lib/druid-1.1.10.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/lib/mysql-connector-java-8.0.27.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/resources/image/BeFree.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-server/src/main/resources/image/BeFree.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/resources/sql/ebrss.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/com/springbear/ebrss/dao/BasicDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-server/src/main/java/com/springbear/ebrss/dao/BasicDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/com/springbear/ebrss/dao/BookDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-server/src/main/java/com/springbear/ebrss/dao/BookDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/com/springbear/ebrss/dao/CodeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-server/src/main/java/com/springbear/ebrss/dao/CodeDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/com/springbear/ebrss/dao/FavoriteDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-server/src/main/java/com/springbear/ebrss/dao/FavoriteDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/com/springbear/ebrss/dao/RecordDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-server/src/main/java/com/springbear/ebrss/dao/RecordDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/com/springbear/ebrss/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-server/src/main/java/com/springbear/ebrss/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/com/springbear/ebrss/entity/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-server/src/main/java/com/springbear/ebrss/entity/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/com/springbear/ebrss/entity/Code.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-server/src/main/java/com/springbear/ebrss/entity/Code.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/com/springbear/ebrss/entity/Favorite.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-server/src/main/java/com/springbear/ebrss/entity/Favorite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/com/springbear/ebrss/entity/Record.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-server/src/main/java/com/springbear/ebrss/entity/Record.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/com/springbear/ebrss/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-server/src/main/java/com/springbear/ebrss/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/com/springbear/ebrss/model/CustomTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-server/src/main/java/com/springbear/ebrss/model/CustomTableModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/com/springbear/ebrss/model/RequestEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-server/src/main/java/com/springbear/ebrss/model/RequestEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/com/springbear/ebrss/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-server/src/main/java/com/springbear/ebrss/service/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/com/springbear/ebrss/service/CodeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-server/src/main/java/com/springbear/ebrss/service/CodeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/com/springbear/ebrss/service/FavoriteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-server/src/main/java/com/springbear/ebrss/service/FavoriteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/com/springbear/ebrss/service/RecordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-server/src/main/java/com/springbear/ebrss/service/RecordService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/com/springbear/ebrss/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-server/src/main/java/com/springbear/ebrss/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/com/springbear/ebrss/thread/HandleRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-server/src/main/java/com/springbear/ebrss/thread/HandleRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/com/springbear/ebrss/thread/ReceiveByteData.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-server/src/main/java/com/springbear/ebrss/thread/ReceiveByteData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/com/springbear/ebrss/thread/SendByteData.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-server/src/main/java/com/springbear/ebrss/thread/SendByteData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/com/springbear/ebrss/thread/SendFeedback.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-server/src/main/java/com/springbear/ebrss/thread/SendFeedback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/com/springbear/ebrss/thread/SendObjects.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-server/src/main/java/com/springbear/ebrss/thread/SendObjects.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/com/springbear/ebrss/ui/AdminFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-server/src/main/java/com/springbear/ebrss/AdminFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/com/springbear/ebrss/ui/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-server/src/main/java/com/springbear/ebrss/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/com/springbear/ebrss/util/DatabaseUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/com/springbear/ebrss/util/DruidUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-server/src/main/java/com/springbear/ebrss/util/DruidUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/com/springbear/ebrss/util/FileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-server/src/main/java/com/springbear/ebrss/util/FileUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/com/springbear/ebrss/util/ThreadPoolUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-server/src/main/java/com/springbear/ebrss/util/ThreadPoolUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ebrss-client/src/main/java/com/springbear/ebrss/LoginFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-client/src/main/java/com/springbear/ebrss/LoginFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ebrss-client/src/main/java/com/springbear/ebrss/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-client/src/main/java/com/springbear/ebrss/client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ebrss-client/src/main/java/com/springbear/ebrss/ui/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-client/src/main/java/com/springbear/ebrss/ui/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ebrss-client/src/main/java/com/springbear/ebrss/ui/RegisterFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-client/src/main/java/com/springbear/ebrss/ui/RegisterFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ebrss-client/src/main/java/com/springbear/ebrss/util/FileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-client/src/main/java/com/springbear/ebrss/util/FileUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ebrss-server/src/main/java/com/springbear/ebrss/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-server/src/main/java/com/springbear/ebrss/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ebrss-server/src/main/java/com/springbear/ebrss/thread/ReceiveByteData.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-server/src/main/java/com/springbear/ebrss/thread/ReceiveByteData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ebrss-server/src/main/java/com/springbear/ebrss/ui/AdminFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-server/src/main/java/com/springbear/ebrss/ui/AdminFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ebrss-server/src/main/java/com/springbear/ebrss/util/DruidUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-server/src/main/java/com/springbear/ebrss/util/DruidUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ebrss-server/src/main/java/com/springbear/ebrss/util/FileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/ebrss-server/src/main/java/com/springbear/ebrss/util/FileUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,6 +32,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -200,7 +65,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/ebrss-server/src/main/resources/sql" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ebrss-server/src/main/resources/upload" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.10548526" />
@@ -225,13 +90,26 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.LoginFrame">
+  <component name="RunManager" selected="Application.Server">
     <configuration name="AdminFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.springbear.ebrss.ui.AdminFrame" />
       <module name="ebrss-server" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.springbear.ebrss.ui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileUtil (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.springbear.ebrss.util.FileUtil" />
+      <module name="ebrss-client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.springbear.ebrss.util.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -278,25 +156,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.LoginFrame" />
         <item itemvalue="Application.Server" />
-        <item itemvalue="Application.AdminFrame" />
         <item itemvalue="Application.FileUtil" />
+        <item itemvalue="Application.LoginFrame" />
+        <item itemvalue="Application.FileUtil (1)" />
+        <item itemvalue="Application.AdminFrame" />
       </list>
     </recent_temporary>
   </component>
@@ -314,7 +191,10 @@
       <workItem from="1646638565072" duration="119000" />
       <workItem from="1646697930700" duration="2060000" />
       <workItem from="1656423095328" duration="7456000" />
-      <workItem from="1656454812167" duration="3393000" />
+      <workItem from="1656454812167" duration="3678000" />
+      <workItem from="1656470388766" duration="2817000" />
+      <workItem from="1656473815196" duration="797000" />
+      <workItem from="1656487627416" duration="4310000" />
     </task>
     <task id="LOCAL-00001" summary="Can't start the ebrss project because lost the .iml config file, then rebuild the whole project and change some info, it can run normally on my PC now.">
       <created>1646637710709</created>
@@ -323,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646637710709</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Modify the server and client modules into maven module to packaging into a .jar compress file to running and fix some bugs.&#10;Add the project build process to help someone run it correctly.">
+      <created>1656458508823</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1656458508823</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -344,6 +231,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Can't start the ebrss project because lost the .iml config file, then rebuild the whole project and change some info, it can run normally on my PC now." />
     <MESSAGE value="Alter the server module that modify the path related to the book file." />
-    <option name="LAST_COMMIT_MESSAGE" value="Alter the server module that modify the path related to the book file." />
+    <MESSAGE value="Modify the server and client modules into maven module to packaging into a .jar compress file to running and fix some bugs.&#10;Add the project build process to help someone run it correctly." />
+    <option name="LAST_COMMIT_MESSAGE" value="Modify the server and client modules into maven module to packaging into a .jar compress file to running and fix some bugs.&#10;Add the project build process to help someone run it correctly." />
   </component>
 </project>
