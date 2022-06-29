@@ -4,7 +4,7 @@
 >
 > 1. 克隆仓库：使用 Git 克隆仓库或直接下载仓库压缩包到您的计算机
 > 2. 打开工程：使用 IntelliJ IDEA 打开克隆的仓库或解压的工程文件，而后使用 Maven 工具更新 `ebrss-server ` 工程模块依赖
-> 3. 创建数据库和表并插入数据：登录 MySQL ，创建 `e_book_resources_service_system` 数据库，将 `src/main/resources/sql/e_book_resources_service_system.sql` 文件中的数据库表导入 e_book_resources_service_system 数据库中
+> 3. 创建数据库和表并插入数据：登录 MySQL ，创建 `e_book_resources_service_system` 数据库，将 `ebrss-server/src/main/resources/sql/e_book_resources_service_system.sql` 文件中的数据库表导入 e_book_resources_service_system 数据库中
 > 4. 修改数据库连接信息：修改 `ebrss-server/src/main/resources/druid.properties` 中的数据库连接信息，设置你自己的数据库用户名和密码 
 > 5. 启动服务器：运行 `ebrss-server/src/main/java/com.springbear.ebrss.Server` 类
 > 6. 启动客户端：运行 `ebrss-client/src/main/java/com.springbear.ebrss.LoginFrame` 类
