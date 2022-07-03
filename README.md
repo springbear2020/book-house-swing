@@ -20,7 +20,7 @@
 >
 >    ```sql
 >    create user 'admin'@'localhost' identified by 'admin';
->    grant all on online_bookhouse.* to 'admin'@'localhost' with grant option;
+>    grant all on e_book_resources_service_system.* to 'admin'@'localhost' with grant option;
 >    ```
 >
 > 4. 启动服务器：在命令行控制台进入 RELEASE 目录下，使用 `java -jar ebrss-server.jar` 命令启动服务器
