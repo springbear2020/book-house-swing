@@ -1,50 +1,52 @@
-> 项目部署运行步骤如下：
->
-> 方案一：
->
-> 1. 克隆仓库：使用 Git 克隆仓库或直接下载仓库压缩包到您的计算机
-> 2. 打开工程：使用 `IntelliJ IDEA` 打开克隆的仓库或解压的工程文件，而后使用 Maven 工具更新 `ebrss-server ` 工程模块依赖
-> 3. 创建数据库和表并插入数据：登录 MySQL ，创建 `e_book_resources_service_system` 数据库，将 `ebrss-server/src/main/resources/sql/e_book_resources_service_system.sql` 文件中的数据库表导入 e_book_resources_service_system 数据库中
-> 4. 修改数据库连接信息：修改 `ebrss-server/src/main/resources/druid.properties` 中的数据库连接信息，设置你自己的数据库用户名和密码 
-> 5. 启动服务器：运行 `ebrss-server/src/main/java/com.springbear.ebrss.Server` 类
-> 6. 启动客户端：运行 `ebrss-client/src/main/java/com.springbear.ebrss.LoginFrame` 类
-> 7. 登录系统：默认用户名和密码均为 `admin`
->
-> 方案二（图书上传、下载功能不可用）：
->
-> 1. 克隆仓库：使用 Git 克隆仓库或直接下载仓库压缩包到您的计算机
->
-> 2. 创建数据库和表并插入数据：登录 MySQL ，创建 `e_book_resources_service_system` 数据库，将 `RELEASE/e_book_resources_service_system.sql` 文件中的数据库表导入 e_book_resources_service_system 数据库中
->
-> 3. 创建数据库用户：在 MySQL 控制台创建 `admin` 用户，密码也为 `admin`，并赋予 admin 用户所有操作权限
->
->    ```sql
->    create user 'admin'@'localhost' identified by 'admin';
->    grant all on e_book_resources_service_system.* to 'admin'@'localhost' with grant option;
->    ```
->
-> 4. 启动服务器：在命令行控制台进入 RELEASE 目录下，使用 `java -jar ebrss-server.jar` 命令启动服务器
->
-> 5. 启动客户端：在命令行控制台进入 RELEASE 目录下，使用 `java -jar ebrss-client.jar` 命令启动客服端
->
-> 6. 登录系统：账号登录默认用户名和密码均为 `admin`
+> 开发时间：2021.11 - 2021.12
 
-# 一、应用背景描述
+# 一、快速开始
+
+方案一：
+
+1. 克隆仓库：使用 Git 克隆仓库或直接下载仓库压缩包到您的计算机
+2. 打开工程：使用 `IntelliJ IDEA` 打开克隆的仓库或解压的工程文件，而后使用 Maven 工具更新 `ebrss-server ` 工程模块依赖
+3. 创建数据库和表并插入数据：登录 MySQL ，创建 `e_book_resources_service_system` 数据库，将 `ebrss-server/src/main/resources/sql/e_book_resources_service_system.sql` 文件中的数据库表导入 e_book_resources_service_system 数据库中
+4. 修改数据库连接信息：修改 `ebrss-server/src/main/resources/druid.properties` 中的数据库连接信息，设置你自己的数据库用户名和密码 
+5. 启动服务器：运行 `ebrss-server/src/main/java/com.springbear.ebrss.Server` 类
+6. 启动客户端：运行 `ebrss-client/src/main/java/com.springbear.ebrss.LoginFrame` 类
+7. 登录系统：默认用户名和密码均为 `admin`
+
+方案二（图书上传、下载功能不可用）：
+
+1. 克隆仓库：使用 Git 克隆仓库或直接下载仓库压缩包到您的计算机
+
+2. 创建数据库和表并插入数据：登录 MySQL ，创建 `e_book_resources_service_system` 数据库，将 `RELEASE/e_book_resources_service_system.sql` 文件中的数据库表导入 e_book_resources_service_system 数据库中
+
+3. 创建数据库用户：在 MySQL 控制台创建 `admin` 用户，密码也为 `admin`，并赋予 admin 用户所有操作权限
+
+   ```sql
+   create user 'admin'@'localhost' identified by 'admin';
+   grant all on e_book_resources_service_system.* to 'admin'@'localhost' with grant option;
+   ```
+
+4. 启动服务器：在命令行控制台进入 RELEASE 目录下，使用 `java -jar ebrss-server.jar` 命令启动服务器
+
+5. 启动客户端：在命令行控制台进入 RELEASE 目录下，使用 `java -jar ebrss-client.jar` 命令启动客服端
+
+6. 登录系统：默认用户名和密码均为 `admin`
+
+# 二、背景调查
 
 随着互联网技术的不断发展，网络上遍布着越来越多的有用或是无用的资源，要在不计其数的资源中筛选出自己亟需的资源，需要耗费较大的精力和非常多的时间。尤其是各种电子图书资源还涉及到知识产权的法律性问题，导致截至目前几乎没有哪个产品能完全满足快速检索电子图书资源和提供相关服务的需求。而现有的各大电子图书网站、系统为了避免侵权问题大部分都选择让网站用户上传对应电子图书的下载链接（电子图书资源一般都还存放在用户的个人云盘中），网站系统负责将所有的链接进行糅合，杂乱无章的整合让普通用户无所适从、望而却步。对于急需查找电子图书的用户，需要到从繁杂的网页中检索出需要的图书的链接，再根据链接跳转到对应的云盘应用进行下载。不得不说，这样的方式对一般用户极其不友好，图书资源也不够规范化、有的是盗版图书、有的甚至不能算是图书、有的下载链接早已失效······ 极大程度浪费了用户的精力和时间。更甚的是，某的网盘下载速度实在堪忧，还得成为会员方可提高下载速度，步骤繁多、代价太大。所以我们的电子图书资源服务系统应运而生。
 
-# 二、系统需求分析
+# 三、需求分析
 
 本电子图书资源服务系统（e-book resource service system）旨在提供电子图书资源一站式服务，只要成为本系统的用户，就能从系统提供的图书资源中直接检索资源并进行下载，操作简单便捷。当然，为解决各竞品都头疼的知识产权问题，本系统采取了以下两条必要措施：
 
-> 1. 系统专门成立了图书管理部门与图书的作者进行协商以解决侵权问题，图书采集员将长期从正规渠道采购各类电子图书资源以满足用户的需求，图书审核员将主要解决图书的知识产权问题等。
-> 2. 本系统的用户一律采取邀请式注册，即只有拥有本系统的注册码方可注册成为系统用户进而享受相关服务，用户注册和下载图书的过程中也将签署相关协议。
+1. 系统专门成立了图书管理部门与图书的作者进行协商以解决侵权问题，图书采集员将长期从正规渠道采购各类电子图书资源以满足用户的需求，图书审核员将主要解决图书的知识产权问题等。
+2. 本系统的用户一律采取邀请式注册，即只有拥有本系统的注册码方可注册成为系统用户进而享受相关服务，用户注册和下载图书的过程中也将签署相关协议。
 
-# 三、系统功能描述
+# 四、功能描述
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/ab820d043af34591a066d345aad09bd6.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU3ByaW5nLV8tQmVhcg==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center)
 
-## 3.1 客户端功能
+## 1、客户端功能
 
 1. 用户注册：用户通过正规渠道获取注册码，填写相关必要信息进行注册，注册过程中需对用户填写的信息进行合法性校验，使用正则表达式和请求服务器验证的方式进行校验，如用户名不允许重复、身份证号及手机号需真实有效等；用户注册前须阅读用户协议
 
@@ -65,7 +67,7 @@
 
 9. 联系客服：客户端提供用户与平台客服进行实时沟通的功能，用户可与客服沟通解决相关系统使用问题或是申请上架自己想要的图书资源等
 
-## 3.2 服务端功能
+## 2、服务端功能
 
 1. 服务器接收处理客户端所有请求，如用户注册、图书查询、图书下载、查询个人收藏夹及个人下载记录等
 
@@ -79,9 +81,9 @@
 9. 数据备份：由系统管理员提供对数据库数据的备份功能
 
 
-# 四、数据库概念结构设计
+# 五、数据库概念结构设计
 
-## 4.1 实体及属性
+## 1、实体及属性
 
 根据网上图书系统的实际情况，对于系统数据库的设计需要考虑全面，既要涉及多种业务员数据，又要考虑信息代码表的需要性。根据功能需求分析，整个系统主要包含的实体及其属性分析如下：
 
@@ -101,7 +103,7 @@
 14. 部门信息：<u>部门编号</u>，部门信息
 15. 角色类型：<u>角色编号</u>，角色描述
 
-## 4.2 实体间关系
+## 2、实体间关系
 
 1. 一个用户有且仅有一个注册码，一个注册码能且仅能供一位用户使用，所以用户与注册码之间是一对一的关系
 2. 一个用户能且仅能拥有一种用户状态，一种用户状态可以对应多个用户，所以用户与用户状态之间是多对一的关系
@@ -117,12 +119,12 @@
 12. 一个职工能且仅能对应本系统的一种角色，一种角色可有多名职工，所以职工与角色之间是多对一的关系
 13. 一条收藏记录只能对应一种图书类别，一种图书类别可以对应多种收藏记录，所以收藏记录与图书类别之间是多对一的关系
 
-## 4.3 实体关系图（ER）
+## 3、实体关系图（ER）
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/6dbc669fcc5141cd8266f14873f5d4d8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU3ByaW5nLV8tQmVhcg==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center)
 
 
-# 五、数据库逻辑结构设计
+# 六、数据库逻辑结构设计
 
 1. 注册码：<u>注册码编号</u>，注册码，注册码状态
 
@@ -265,7 +267,7 @@
 | roleId          | INT(11)     |  Y   |      |
 | roleDescription | VARCHAR(32) |      |      |
 
-# 六、数据库生成 SQL 语句
+# 七、数据库生成 SQL 语句
 
 1. 建立数据库
 
@@ -521,8 +523,8 @@ INSERT INTO `category` VALUES (1,'A','马列主义、毛泽东思想、邓小平
 -- 插入图书数据
 INSERT INTO `book` VALUES (1,'9787111213826','Java编程思想(第4版)','陈昊鹏 译',108,'机械工业出版社','2020年10月第1版','Java语言程序设计','d:\\book\\Java编程思想(第4版).pdf','T','on'),(2,'0131872486','Thing in Java(Fourth Edition)','Bruce Eckel',0,'President, MindView, Inc. ','2006年1月第1版','Java语言程序设计','d:\\book\\Thing in Java(Fourth Edition).pdf','T','on'),(3,'97871113700048','Java并发编程实战','童云兰 译',69,'机械工业出版社','2012年2月第1版','Java、Java并发编程、并发编程','d:\\book\\Java并发编程实战.pdf','T','on'),(4,'9787111508243','Java并发编程的艺术','方腾飞 魏鹏 程晓明',0,'机械工业出版社','1970年1月第1版','Java、Java并发编程、并发编程','d:\\book\\Java并发编程的艺术.pdf','T','on'),(5,'9787111547426','Java核心技术卷I基础知识(原书第10版)','周立新 陈波 叶乃文 杜永萍 译',119,'机械工业出版社','2016年9月第1版','Java程序设计、计算机科学','d:\\book\\Java核心技术卷I基础知识(原书第10版).pdf','T','on'),(6,'9787111349662','深入理解Java虚拟机JVM高级特性与最佳实践','周志明',69,'机械工业出版社','2011年9月第1版','Java语言程序设计、JVM、Java虚拟机','d:\\book\\深入理解Java虚拟机JVM高级特性与最佳实践.pdf','T','on');
 ```
-# 七、功能演示
-## 7.1 客户端
+# 八、功能演示
+## 1、客户端
 
 1. 用户登录：用户登录时先在客户端检查用户名和密码是否为空，若存在为空则提示用户重新输入
 
@@ -531,9 +533,9 @@ INSERT INTO `book` VALUES (1,'9787111213826','Java编程思想(第4版)','陈昊
 
 2. 用户登录：请求服务器验证用户输入的用户名与密码，若用户名不存在或用户名与密码不匹配，则提示用户信息错误，检查后重新输入或进行注册
 
-```java
-String sql = "SELECT username, password FROM User WHERE username = ? AND password = ?;";
-```
+    ```java
+    String sql = "SELECT username, password FROM User WHERE username = ? AND password = ?;";
+    ```
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/8872fd791fa4426486da7773b1231294.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU3ByaW5nLV8tQmVhcg==,size_11,color_FFFFFF,t_70,g_se,x_16#pic_center)
 
@@ -550,27 +552,27 @@ String sql = "SELECT username, password FROM User WHERE username = ? AND passwor
 
 5. 用户注册：当用户输入的所有信息均不为空且符合格式要求的情况下，请求服务器验证用户输入的用户名是否存在，若存在则提示当前用户名已存在，提示用户重新输入用户名
 
-```java
-String sql = "SELECT username FROM User WHERE username = ?;";
-```
+    ```java
+    String sql = "SELECT username FROM User WHERE username = ?;";
+    ```
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/4d067295e4704376afbfd3e31cae1a48.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU3ByaW5nLV8tQmVhcg==,size_14,color_FFFFFF,t_70,g_se,x_16#pic_center)
 
 
 6. 用户注册：在第（5）步的基础上，检查用户输入的注册码是否合法即数据库注册码表中是否存在相同的注册码且处于未使用状态，若合法则用户注册成功，否则提示用户注册码不存在，提示用户需先联系管理员获取注册码
 
-```java
-String sql = "SELECT registerCode FROM Code WHERE registerCode = ? AND codeState = 'unused';";
-```
+    ```java
+    String sql = "SELECT registerCode FROM Code WHERE registerCode = ? AND codeState = 'unused';";
+    ```
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/d8a1258babb040d9b2e616b6f2617ec9.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU3ByaW5nLV8tQmVhcg==,size_14,color_FFFFFF,t_70,g_se,x_16#pic_center)
 
 
 7. 用户注册：在第（6）的基础上，用户输入有效的注册码，注册成功，提醒用户返回登录，注册成功的同时用户数据表中的触发器 update_code_state 自动修改对应注册码状态为已使用
 
-```java
-String sql = "INSERT INTO User(username,password,name,sex,idCard,phone,mail,registerCode) VALUES(?,?,?,?,?,?,?,?);";
-```
+    ```java
+    String sql = "INSERT INTO User(username,password,name,sex,idCard,phone,mail,registerCode) VALUES(?,?,?,?,?,?,?,?);";
+    ```
 
 
 
@@ -584,13 +586,13 @@ String sql = "INSERT INTO User(username,password,name,sex,idCard,phone,mail,regi
 
 9. 图书检索：用户根据需要的图书信息输入不同的检索条件进行查询，也可查询所有图书信息，此时客户端发送请求图书信息请求到服务器，服务器根据不同的请求不同的检索条件从图书视图中查询后返回不同的图书信息，客户端处理图书信息格式后显示
 
-```java
-String sql = "SELECT * FROM view_book;";
-String sql = "SELECT * FROM view_book WHERE title LIKE ? AND bookState = 'on';";
-String sql = "SELECT * FROM view_book WHERE author LIKE ? AND bookState = 'on';";
-String sql = "SELECT * FROM view_book WHERE category = ? AND bookState = 'on';";
-String sql = "SELECT * FROM view_book WHERE keyword LIKE ? AND bookState = 'on';";
-```
+    ```java
+    String sql = "SELECT * FROM view_book;";
+    String sql = "SELECT * FROM view_book WHERE title LIKE ? AND bookState = 'on';";
+    String sql = "SELECT * FROM view_book WHERE author LIKE ? AND bookState = 'on';";
+    String sql = "SELECT * FROM view_book WHERE category = ? AND bookState = 'on';";
+    String sql = "SELECT * FROM view_book WHERE keyword LIKE ? AND bookState = 'on';";
+    ```
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/65a0949c326243d396929bf0ae54ea36.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU3ByaW5nLV8tQmVhcg==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center)
 
@@ -601,9 +603,9 @@ String sql = "SELECT * FROM view_book WHERE keyword LIKE ? AND bookState = 'on';
 
 11. 图书下载：用户选择图书并进行下载，提示用户选择图书保存位置，若保存路径无效则图书下载失败。服务器根据用户选择的图书信息，从数据库表中查询出当前图书的保存路径，根据路径从磁盘加载文件而后发送到客户端，客户端接收服务器的文件数据并进行保存
 
-```java
-String sql = "SELECT url FROM Book WHERE isbn = ?;";
-```
+    ```java
+    String sql = "SELECT url FROM Book WHERE isbn = ?;";
+    ```
 - 选择图书保存路径
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/c7fb284a79444e628119c5cac132efd8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU3ByaW5nLV8tQmVhcg==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center)
@@ -614,22 +616,22 @@ String sql = "SELECT url FROM Book WHERE isbn = ?;";
 
 12. 保存下载记录：用户成功下载一本图书的同时，自动为用户添加下载记录
 
-```java
-String sql = "INSERT INTO Record(title,author,time,username) VALUES (?,?,?,?);";
-```
+    ```java
+    String sql = "INSERT INTO Record(title,author,time,username) VALUES (?,?,?,?);";
+    ```
 
 13. 查询用户下载记录，客户端向服务器发出根据登录服务系统用户名查询当前用户的下载记录，若不存在该用户的下载记录则提示用户暂无下载记录，否则显示从服务器查询到的所有该用户的下载记录
 
-```java
-String sql = "SELECT * FROM Record WHERE username = ?;";
-```
+    ```java
+    String sql = "SELECT * FROM Record WHERE username = ?;";
+    ```
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/b80090b6768d421cab5617c48e3a148d.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU3ByaW5nLV8tQmVhcg==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center)
 
 14. 收藏图书：当用户从服务器查询到需要的图书信息时，也可选择加入到个人收藏夹，提示用户先选择想要加入到收藏夹的图书，若收藏夹中已存在对应的图书记录，则提示用户不能重复收藏
-```java
-String sql = "INSERT INTO Record(title,author,time,username) VALUES (?,?,?,?);";
-```
+    ```java
+    String sql = "INSERT INTO Record(title,author,time,username) VALUES (?,?,?,?);";
+    ```
 - 收藏成功：用户添加图书信息到个人收藏夹成功
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/733274cffc384baba9ab67acd474bf03.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU3ByaW5nLV8tQmVhcg==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center)
@@ -641,10 +643,10 @@ String sql = "INSERT INTO Record(title,author,time,username) VALUES (?,?,?,?);";
 
 15. 取消收藏：用户选择个人收藏夹中想要取消收藏的图书信息
 
-```java
-String sql = "SELECT * FROM Favorite WHERE username = ?;";
-String sql = "DELETE FROM Favorite WHERE isbn = ? AND username = ?;";
-```
+    ```java
+    String sql = "SELECT * FROM Favorite WHERE username = ?;";
+    String sql = "DELETE FROM Favorite WHERE isbn = ? AND username = ?;";
+    ```
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/f25cf7ab4fa44bd8890cc7140881d250.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU3ByaW5nLV8tQmVhcg==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center)
 
@@ -663,10 +665,10 @@ String sql = "DELETE FROM Favorite WHERE isbn = ? AND username = ?;";
 
 17. 账号管理：个人信息修改，若个人信息未发生变更则不允许修改，发送用户修改请求和修改后的信息到服务器，服务器更新相关数据表的用户信息
 
-```sql
-String sql = "SELECT * FROM User WHERE username = ?;";
-String sql = "UPDATE User SET password = ?, phone = ?, mail = ? WHERE username = ?;";
-```
+    ```sql
+    String sql = "SELECT * FROM User WHERE username = ?;";
+    String sql = "UPDATE User SET password = ?, phone = ?, mail = ? WHERE username = ?;";
+    ```
 
 - 信息未变更，不能修改
 
@@ -678,11 +680,11 @@ String sql = "UPDATE User SET password = ?, phone = ?, mail = ? WHERE username =
 
 18. 用户注销：用户选择注销账户，再次确认是否注销，确认注销则发送用户注销请求到服务器，服务器从用户信息表中删除相关用户信息，删除该用户的所有下载记录以及收藏记录，返回用户登录界面
 
-```java
-String sql = "DELETE FROM Favorite WHERE username = ?;";
-String sql = "DELETE FROM User WHERE username = ?;";
-String sql = "DELETE FROM Record WHERE username = ?;";
-```
+    ```java
+    String sql = "DELETE FROM Favorite WHERE username = ?;";
+    String sql = "DELETE FROM User WHERE username = ?;";
+    String sql = "DELETE FROM Record WHERE username = ?;";
+    ```
 
 - 确认注销：提示用户是否注销
 
@@ -694,7 +696,7 @@ String sql = "DELETE FROM Record WHERE username = ?;";
 
 
 
-## 7.2 服务端
+## 2、服务端
 
 1. 响应客户端的各种请求，分类处理请求，控制台打印客户端的请求信息
 
@@ -702,29 +704,29 @@ String sql = "DELETE FROM Record WHERE username = ?;";
 
 
 2. 新增图书信息到数据库图书信息表
-```java
-String sql = "INSERT INTO Book(isbn, title, author, price, publisher, edition, keyword, url, category, bookState) VALUES(?,?,?,?,?,?,?,?,?,?);";
-```
-![在这里插入图片描述](https://img-blog.csdnimg.cn/8eeada1a69de4bca844c342923271553.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU3ByaW5nLV8tQmVhcg==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center)
+    ```java
+    String sql = "INSERT INTO Book(isbn, title, author, price, publisher, edition, keyword, url, category, bookState) VALUES(?,?,?,?,?,?,?,?,?,?);";
+    ```
+    ![在这里插入图片描述](https://img-blog.csdnimg.cn/8eeada1a69de4bca844c342923271553.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU3ByaW5nLV8tQmVhcg==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center)
 
 3. 以事务批处理方式添加随机生成的注册码到数据库注册码信息表，添加成功则提交事务，否则回滚事务，并且修改自增 id 为事务开始前的值
 
-```java
-// 关闭自动提交，开启事务
-connection.setAutoCommit(false);
-// 注册码不存在重复的情况下全部插入成功则提交事务，否则回滚并修改自增 id 的值为事务开始前的值
-if (paramsCounts == updateSuccessCounts) {
-    connection.commit();
-    return true;
-} else {
-    connection.rollback();
-    codeService.resetToOldId(oldId);
-}
-
-String sql = "INSERT INTO Code(registerCode) VALUES(?);";
-String sql = "SELECT MAX(codeId) FROM Code FOR UPDATE;";
-String sql = "ALTER TABLE Code AUTO_INCREMENT = ?";
-```
+    ```java
+    // 关闭自动提交，开启事务
+    connection.setAutoCommit(false);
+    // 注册码不存在重复的情况下全部插入成功则提交事务，否则回滚并修改自增 id 的值为事务开始前的值
+    if (paramsCounts == updateSuccessCounts) {
+        connection.commit();
+        return true;
+    } else {
+        connection.rollback();
+        codeService.resetToOldId(oldId);
+    }
+    
+    String sql = "INSERT INTO Code(registerCode) VALUES(?);";
+    String sql = "SELECT MAX(codeId) FROM Code FOR UPDATE;";
+    String sql = "ALTER TABLE Code AUTO_INCREMENT = ?";
+    ```
 
 - 添加注册码成功
 
@@ -736,17 +738,17 @@ String sql = "ALTER TABLE Code AUTO_INCREMENT = ?";
 
 4. 备份数据库中的所有数据到指定路径，同时备份数据库数据和数据表结构
 
-```java
-// Combining the parameters into a command
-String command = "mysqldump -h" + serverIp + " -u" + username + " -p" + password + " -B " + dbName + " > " + fileSavePath + "\\" + dbName + ".sql";
-try {
-    Runtime.getRuntime().exec("cmd /c" + command);
-    JOptionPane.showMessageDialog(null, "Database backup successfully", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
-} catch (IOException e) {
-    e.printStackTrace();
-    JOptionPane.showMessageDialog(null, "Database backup failed, try again later", "ERROR", JOptionPane.ERROR_MESSAGE);
-}
-```
+    ```java
+    // Combining the parameters into a command
+    String command = "mysqldump -h" + serverIp + " -u" + username + " -p" + password + " -B " + dbName + " > " + fileSavePath + "\\" + dbName + ".sql";
+    try {
+        Runtime.getRuntime().exec("cmd /c" + command);
+        JOptionPane.showMessageDialog(null, "Database backup successfully", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
+    } catch (IOException e) {
+        e.printStackTrace();
+        JOptionPane.showMessageDialog(null, "Database backup failed, try again later", "ERROR", JOptionPane.ERROR_MESSAGE);
+    }
+    ```
 
 - 选择备份文件保存路径
 
