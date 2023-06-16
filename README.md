@@ -1,16 +1,21 @@
-> 开发时间：2021.11 - 2021.12
+<p align="center">
+    <img src="https://img.shields.io/static/v1?label=%E5%BC%80%E5%8F%91%E6%97%B6%E9%97%B4&message=21/11/01 - 21/12/31&color=007bff"/>
+    <img src="https://img.shields.io/static/v1?label=Java&message=1.8.0_311&color=e83e8c"/>
+    <img src="https://img.shields.io/static/v1?label=MySQL&message=8.0.28&color=fd7e14"/>
+    <a href="https://github.com/springbear2020/book-house-swing" target="_blank">
+        <img src="https://img.shields.io/static/v1?label=%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE&message=book-house-swing&color=20c997"/>
+    </a>
+</p>
 
 # 一、快速开始
 
-1. 克隆仓库：使用 Git 克隆仓库或直接下载仓库压缩包到您的计算机
-2. 打开工程：使用 `IntelliJ IDEA` 打开克隆的仓库或解压的工程文件，而后使用 `Maven` 项目构建工具更新 `ebrss-server ` 工程模块依赖
-3. 创建数据库和表并插入数据：
-   - 登录 MySQL ，创建 `e_book_resources_service_system` 数据库
-   - 将 `ebrss-server/src/main/resources/e_book_resources_service_system.sql` 文件中的数据库表导入 e_book_resources_service_system 数据库中
-4. 修改数据库连接信息：修改 `ebrss-server/src/main/resources/druid.properties` 中的数据库连接信息，设置你自己的用户名和密码
-5. 启动服务器：运行 `ebrss-server/src/main/java/com.springbear.ebrss.Server.java` 类
-6. 启动客户端：运行 `ebrss-client/src/main/java/com.springbear.ebrss.LoginFrame.java` 类
-7. 登录系统：默认用户名和密码均为 `admin`
+1. 克隆仓库：使用 Git 克隆仓库或直接下载仓库压缩包到您的计算机来获取源代码。
+2. 打开工程：使用 IntelliJ IDEA 开发工具依次打开 ebrss-server 和 ebrss-client 工程模块代码，而后使用 Maven 项目构建工具更新工程模块依赖。
+3. 创建数据库并导入数据：登录 MySQL 控制台，创建一个名为 ebrss 的数据库，并将 document/sql/ebrss.sql 脚本中的建表语句和数据导入到 ebrss 数据库中。
+4. 修改配置：修改 ebrss-server/src/main/resources/druid.properties 文件中的数据库连接信息，设置你自己的数据库用户名和密码。
+5. 启动服务器：运行 ebrss-server/src/main/java/com.springbear.ebrss.Server 类。
+6. 启动客户端：运行 ebrss-client/src/main/java/com.springbear.ebrss.LoginFrame 类。
+7. 登录系统：系统的默认用户名和密码均为 admin。
 
 # 二、背景调查
 
@@ -25,46 +30,46 @@
 
 # 四、功能描述
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/ab820d043af34591a066d345aad09bd6.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU3ByaW5nLV8tQmVhcg==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center)
+![](document/img/功能描述.png)
 
-## 1、客户端功能
+## 4.1 客户端功能
 
-1. 用户注册：用户通过正规渠道获取注册码，填写相关必要信息进行注册，注册过程中需对用户填写的信息进行合法性校验，使用正则表达式和请求服务器验证的方式进行校验，如用户名不允许重复、身份证号及手机号需真实有效等；用户注册前须阅读用户协议
+1. 用户注册：用户通过正规渠道获取注册码，填写相关必要信息进行注册，注册过程中需对用户填写的信息进行合法性校验，使用正则表达式和请求服务器验证的方式进行校验，如用户名不允许重复、身份证号及手机号需真实有效等；用户注册前须阅读用户协议。
 
-2. 用户登录：用户注册成功后输入用户名、密码尝试登入系统，客户端发送请求到服务器验证用户名及密码正确性，验证通过则用户进入服务系统，否则提醒信息错误，告知用户需重新输入或进行注册
+2. 用户登录：用户注册成功后输入用户名、密码尝试登入系统，客户端发送请求到服务器验证用户名及密码正确性，验证通过则用户进入服务系统，否则提醒信息错误，告知用户需重新输入或进行注册。
 
 
-3. 图书检索：用户可以根据需要的图书信息输入检索条件，从服务器请求对应的图书信息，检索条件可以是书名、作者、关键词、分类或直接检索所有图书，并浏览图书信息；若不存在用户需要的图书信息，友好提示用户可以选择联系客服，阐明自己需要的图书类型，由客服报图书采购部门进行处理，最大程度满足用户的需求
+3. 图书检索：用户可以根据需要的图书信息输入检索条件，从服务器请求对应的图书信息，检索条件可以是书名、作者、关键词、分类或直接检索所有图书，并浏览图书信息；若不存在用户需要的图书信息，友好提示用户可以选择联系客服，阐明自己需要的图书类型，由客服报图书采购部门进行处理，最大程度满足用户的需求。
 
-4. 图书下载：用户根据第（3）步请求到的图书信息，可每次选择一项图书立即下载，客户端请求服务器传送对应的图书信息到客户端，由用户自定义路径进行保存，图书下载完成
+4. 图书下载：用户根据第（3）步请求到的图书信息，可每次选择一项图书立即下载，客户端请求服务器传送对应的图书信息到客户端，由用户自定义路径进行保存，图书下载完成。
 
-5. 图书上传：因部分图书资源较为稀缺，故提供用户可上传自己收藏的图书资源的功能。用户成功上传图书文件，经服务器下载后，由图书管理部门解决知识产权问题，而后上架供其它用户下载
+5. 图书上传：因部分图书资源较为稀缺，故提供用户可上传自己收藏的图书资源的功能。用户成功上传图书文件，经服务器下载后，由图书管理部门解决知识产权问题，而后上架供其它用户下载。
 
-6. 下载记录：在用户成功下载图书的同时，自动为用户添加相应的下载记录，用户也可查询自己的历史下载记录
+6. 下载记录：在用户成功下载图书的同时，自动为用户添加相应的下载记录，用户也可查询自己的历史下载记录。
 
-7. 收藏夹：用户根据第（3）步请求到的图书信息，若用户不想立即下载图书，为方便日后再次便捷查阅，用户可选择将需要的图书加入到个人收藏夹；收藏夹中页面提供用户下载图书和取消收藏的功能
+7. 收藏夹：用户根据第（3）步请求到的图书信息，若用户不想立即下载图书，为方便日后再次便捷查阅，用户可选择将需要的图书加入到个人收藏夹；收藏夹中页面提供用户下载图书和取消收藏的功能。
 
-8. 账号管理：账号管理页面用户可以选择修改个人部分信息，如登录密码、手机号等；也可选择注销账户，用户申请注销账户后，服务端将该账户状态修改为冻结状态，若 90 日之内用户未申请解冻，则系统彻底删除该账户的所有信息
+8. 账号管理：账号管理页面用户可以选择修改个人部分信息，如登录密码、手机号等；也可选择注销账户，用户申请注销账户后，服务端将该账户状态修改为冻结状态，若 90 日之内用户未申请解冻，则系统彻底删除该账户的所有信息。
 
-9. 联系客服：客户端提供用户与平台客服进行实时沟通的功能，用户可与客服沟通解决相关系统使用问题或是申请上架自己想要的图书资源等
+9. 联系客服：客户端提供用户与平台客服进行实时沟通的功能，用户可与客服沟通解决相关系统使用问题或是申请上架自己想要的图书资源等。
 
-## 2、服务端功能
+## 4.2 服务端功能
 
-1. 服务器接收处理客户端所有请求，如用户注册、图书查询、图书下载、查询个人收藏夹及个人下载记录等
+1. 服务器接收处理客户端所有请求，如用户注册、图书查询、图书下载、查询个人收藏夹及个人下载记录等。
 
-2. 服务端根据系统角色不同，授予不同的角色不同的权限，角色主要分为系统管理员、图书收集员、图书审核员、图书录入员、图书维护员、注册码管理员等
-3. 图书收集：由图书收集员从各种正规渠道获取图书资源，包括整理用户上传的资源，分类整理后交由图书审核员解决知识产权问题
-4. 图书审核：由图书审核员解决电子图书的知识产权问题，与作者联系协商，每一位审核员与作者协商成功后都需要签订相关纸质协议，录入电子记录到数据库相关数据表，以便日后查用
-5. 图书录入：由图书录入员录入审核员已解决产权问题的图书信息，如 ISBN 号、书名、作者、 出版社、关键词等基本信息，对图书基本信息进行校验
-6. 图书维护：由图书维护员对图书的基本信息进行维护，如根据图书的分类对图书进行分类管理以方便用户检索、管理图书上下架状态、对图书信息进行更新、管理出版社信息等，所有的操作记录都需要进行保存，以便日后查用
-7. 注册码管理：由注册码管理员对注册码进行管理，如监测到注册码数量不足时添加注册码、用户成功注销后回收注册码等
-8. 用户管理：由系统管理员对客户端的普通用户和系统职工的信息进行维护管理，如冻结账户、更新用户信息等
-9. 数据备份：由系统管理员提供对数据库数据的备份功能
+2. 服务端根据系统角色不同，授予不同的角色不同的权限，角色主要分为系统管理员、图书收集员、图书审核员、图书录入员、图书维护员、注册码管理员等。
+3. 图书收集：由图书收集员从各种正规渠道获取图书资源，包括整理用户上传的资源，分类整理后交由图书审核员解决知识产权问题。
+4. 图书审核：由图书审核员解决电子图书的知识产权问题，与作者联系协商，每一位审核员与作者协商成功后都需要签订相关纸质协议，录入电子记录到数据库相关数据表，以便日后查用。
+5. 图书录入：由图书录入员录入审核员已解决产权问题的图书信息，如 ISBN 号、书名、作者、 出版社、关键词等基本信息，对图书基本信息进行校验。
+6. 图书维护：由图书维护员对图书的基本信息进行维护，如根据图书的分类对图书进行分类管理以方便用户检索、管理图书上下架状态、对图书信息进行更新、管理出版社信息等，所有的操作记录都需要进行保存，以便日后查用。
+7. 注册码管理：由注册码管理员对注册码进行管理，如监测到注册码数量不足时添加注册码、用户成功注销后回收注册码等。
+8. 用户管理：由系统管理员对客户端的普通用户和系统职工的信息进行维护管理，如冻结账户、更新用户信息等。
+9. 数据备份：由系统管理员提供对数据库数据的备份功能。
 
 
 # 五、数据库概念结构设计
 
-## 1、实体及属性
+## 5.1 实体及属性
 
 根据网上图书系统的实际情况，对于系统数据库的设计需要考虑全面，既要涉及多种业务员数据，又要考虑信息代码表的需要性。根据功能需求分析，整个系统主要包含的实体及其属性分析如下：
 
@@ -84,25 +89,25 @@
 14. 部门信息：<u>部门编号</u>，部门信息
 15. 角色类型：<u>角色编号</u>，角色描述
 
-## 2、实体间关系
+## 5.2 实体间关系
 
-1. 一个用户有且仅有一个注册码，一个注册码能且仅能供一位用户使用，所以用户与注册码之间是一对一的关系
-2. 一个用户能且仅能拥有一种用户状态，一种用户状态可以对应多个用户，所以用户与用户状态之间是多对一的关系
-3. 一个用户可以有多条下载记录，一条下载记录只能对应一个用户，所以用户与下载记录之间是一对多的关系
-4. 一个用户可以有多条收藏记录，一条收藏记录只能对应一个用户，所以用户与收藏记录之间是一对多的关系
-5. 一本书可以由多位作者编写，一位作者可以编写多本书，所以图书与作者之间是多对多的关系
-6. 一本书有且仅有一个出版社，一个出版社可以出版多本书，所以图书与出版社之间是多对一的关系
-7. 一本书只属于一种图书类别，一类图书可以有多本图书，所以图书与图书类别之间是多对一的关系
-8. 一本书可以有多个关键词，一个关键词可以描述多本书，所以图书与关键词之间是多对多的关系
-9. 一本书有且仅有一种图书状态，一种图书状态可以对应多本图书，所以图书与图书状态之间是多对一的关系
-10. 一个职工可以同时担任多种职位，一个职位可以由多个人担任，所以职工与职位之间是多对多的关系
-11. 一个职工可在多个部门任职，一个部门可以有多名职工，所以职工与部门之间是多对多的关系
-12. 一个职工能且仅能对应本系统的一种角色，一种角色可有多名职工，所以职工与角色之间是多对一的关系
-13. 一条收藏记录只能对应一种图书类别，一种图书类别可以对应多种收藏记录，所以收藏记录与图书类别之间是多对一的关系
+1. 一个用户有且仅有一个注册码，一个注册码能且仅能供一位用户使用，所以用户与注册码之间是一对一的关系。
+2. 一个用户能且仅能拥有一种用户状态，一种用户状态可以对应多个用户，所以用户与用户状态之间是多对一的关系。
+3. 一个用户可以有多条下载记录，一条下载记录只能对应一个用户，所以用户与下载记录之间是一对多的关系。
+4. 一个用户可以有多条收藏记录，一条收藏记录只能对应一个用户，所以用户与收藏记录之间是一对多的关系。
+5. 一本书可以由多位作者编写，一位作者可以编写多本书，所以图书与作者之间是多对多的关系。
+6. 一本书有且仅有一个出版社，一个出版社可以出版多本书，所以图书与出版社之间是多对一的关系。
+7. 一本书只属于一种图书类别，一类图书可以有多本图书，所以图书与图书类别之间是多对一的关系。
+8. 一本书可以有多个关键词，一个关键词可以描述多本书，所以图书与关键词之间是多对多的关系。
+9. 一本书有且仅有一种图书状态，一种图书状态可以对应多本图书，所以图书与图书状态之间是多对一的关系。
+10. 一个职工可以同时担任多种职位，一个职位可以由多个人担任，所以职工与职位之间是多对多的关系。
+11. 一个职工可在多个部门任职，一个部门可以有多名职工，所以职工与部门之间是多对多的关系。
+12. 一个职工能且仅能对应本系统的一种角色，一种角色可有多名职工，所以职工与角色之间是多对一的关系。
+13. 一条收藏记录只能对应一种图书类别，一种图书类别可以对应多种收藏记录，所以收藏记录与图书类别之间是多对一的关系。
 
-## 3、实体关系图（ER）
+## 5.3 实体关系图
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/6dbc669fcc5141cd8266f14873f5d4d8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU3ByaW5nLV8tQmVhcg==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center)
+![在这里插入图片描述](document/img/E-R 图.png)
 
 
 # 六、数据库逻辑结构设计
@@ -110,7 +115,7 @@
 1. 注册码：<u>注册码编号</u>，注册码，注册码状态
 
 | 数据项    | 数据类型 | 主码 | 外码 | 唯一 |
-| --------- | -------- | :--: | :--: | :--: |
+| :-------- | :------- | :--: | :--: | :--: |
 | codeId    | INT(11)  |  Y   |      |      |
 | code      | CHAR(8)  |      |      |  Y   |
 | codeState | CHAR(8)  |      |      |      |
@@ -118,7 +123,7 @@
 2. 用户状态：<u>用户状态编号</u>，用户状态名称
 
 | 数据项      | 数据类型 | 主码 | 外码 |
-| ----------- | -------- | :--: | :--: |
+| :---------- | :------- | :--: | :--: |
 | userStateId | INT(11)  |  Y   |      |
 | userState   | CHAR(8)  |      |      |
 
@@ -140,14 +145,14 @@
 4. 图书状态：<u>图书状态编号</u>，图书状态
 
 | 数据项      | 数据类型 | 主码 | 外码 |
-| ----------- | -------- | :--: | :--: |
+| :---------- | :------- | :--: | :--: |
 | bookStateId | INT(11)  |  Y   |      |
 | bookState   | CHAR(8)  |      |      |
 
 5. 图书类别：<u>类别编号</u>，类别名称，类别描述
 
 | 数据项      | 数据类型    | 主码 | 外码 | 唯一 |
-| ----------- | ----------- | :--: | :--: | :--: |
+| :---------- | :---------- | :--: | :--: | :--: |
 | categoryId  | INT(11)     |  Y   |      |      |
 | category    | CHAR(1)     |      |      |  Y   |
 | description | VARCHAR(32) |      |      |      |
@@ -155,7 +160,7 @@
 6. 图书：<u>图书编号</u>，ISBN，书名，作者，单价，出版社，出版时间，关键词，保存路径，图书分类，<u>图书状态编号</u>
 
 | 数据项    | 数据类型    | 主码 | 外码 | 唯一 |
-| --------- | ----------- | :--: | :--: | :--: |
+| :-------- | :---------- | :--: | :--: | :--: |
 | bookId    | INT(11)     |  Y   |      |      |
 | isbn      | CHAR(16)    |      |      |  Y   |
 | title     | VARCHAR(32) |      |      |      |
@@ -170,7 +175,7 @@
 7. 下载记录：<u>下载记录编号</u>，书名，作者，下载时间，<u>用户名</u>
 
 | 数据项   | 数据类型    | 主码 | 外码 |
-| -------- | ----------- | :--: | :--: |
+| :------- | :---------- | :--: | :--: |
 | recordId | INT(11)     |  Y   |      |
 | title    | VARCHAR(32) |      |      |
 | author   | VARCHAR(32) |      |      |
@@ -180,7 +185,7 @@
 8. 收藏记录：<u>isbn</u>，书名，作者，关键词，分类，收藏时间，<u>用户名</u>
 
 | 数据项   | 数据类型    | 主码 | 外码 |
-| -------- | ----------- | :--: | :--: |
+| :------- | :---------- | :--: | :--: |
 | isbn     | CHAR(16)    |  Y   |  Y   |
 | title    | VARCHAR(32) |      |      |
 | author   | VARCHAR(32) |      |      |
@@ -192,14 +197,14 @@
 9. 作者：<u>作者编号</u>，作者姓名
 
 | 数据项     | 数据类型    | 主码 | 外码 |
-| ---------- | ----------- | :--: | :--: |
+| :--------- | :---------- | :--: | :--: |
 | authorId   | INT(11)     |  Y   |      |
 | authorName | VARCHAR(32) |      |      |
 
 10. 出版社：<u>出版社编号</u>，出版社名称，固定电话，地址
 
 | 数据项        | 数据类型    | 主码 | 外码 |
-| ------------- | ----------- | :--: | :--: |
+| :------------ | :---------- | :--: | :--: |
 | publisherId   | INT(11)     |  Y   |      |
 | publisherName | VARCHAR(32) |      |      |
 | tel           | VARCHAR(32) |      |      |
@@ -208,14 +213,14 @@
 11. 关键词：<u>关键词编号</u>，关键词名称
 
 | 数据项      | 数据类型    | 主码 | 外码 |
-| ----------- | ----------- | :--: | :--: |
+| :---------- | :---------- | :--: | :--: |
 | keywordId   | INT(11)     |  Y   |      |
 | keywordName | VARCHAR(32) |      |      |
 
 12. 职工信息：<u>职工编号</u>，姓名，性别，出生年月，手机号，家庭地址，用户密码，<u>职位编号</u>，<u>部门编号</u>，<u>角色编号</u>
 
 | 数据项       | 数据类型    | 主码 | 外码 |
-| ------------ | ----------- | :--: | :--: |
+| :----------- | :---------- | :--: | :--: |
 | employeeId   | INT(11)     |  Y   |      |
 | name         | VARCHAR(32) |      |      |
 | sex          | CHAR(1)     |      |      |
@@ -230,21 +235,21 @@
 13. 职位信息：<u>职位编号</u>，职位描述
 
 | 数据项       | 数据类型    | 主码 | 外码 |
-| ------------ | ----------- | :--: | :--: |
+| :----------- | :---------- | :--: | :--: |
 | positionId   | INT(11)     |      |      |
 | positionName | VARCHAR(32) |      |      |
 
 14. 部门信息：<u>部门编号</u>，部门信息
 
 | 数据项         | 数据类型    | 主码 | 外码 |
-| -------------- | ----------- | :--: | :--: |
+| :------------- | :---------- | :--: | :--: |
 | departmentId   | INT(11)     |  Y   |      |
 | departmentName | VARCHAR(32) |      |      |
 
 15. 角色类型：<u>角色编号</u>，角色描述
 
 | 数据项          | 数据类型    | 主码 | 外码 |
-| --------------- | ----------- | :--: | :--: |
+| :-------------- | :---------- | :--: | :--: |
 | roleId          | INT(11)     |  Y   |      |
 | roleDescription | VARCHAR(32) |      |      |
 
@@ -505,236 +510,269 @@ INSERT INTO `category` VALUES (1,'A','马列主义、毛泽东思想、邓小平
 INSERT INTO `book` VALUES (1,'9787111213826','Java编程思想(第4版)','陈昊鹏 译',108,'机械工业出版社','2020年10月第1版','Java语言程序设计','d:\\book\\Java编程思想(第4版).pdf','T','on'),(2,'0131872486','Thing in Java(Fourth Edition)','Bruce Eckel',0,'President, MindView, Inc. ','2006年1月第1版','Java语言程序设计','d:\\book\\Thing in Java(Fourth Edition).pdf','T','on'),(3,'97871113700048','Java并发编程实战','童云兰 译',69,'机械工业出版社','2012年2月第1版','Java、Java并发编程、并发编程','d:\\book\\Java并发编程实战.pdf','T','on'),(4,'9787111508243','Java并发编程的艺术','方腾飞 魏鹏 程晓明',0,'机械工业出版社','1970年1月第1版','Java、Java并发编程、并发编程','d:\\book\\Java并发编程的艺术.pdf','T','on'),(5,'9787111547426','Java核心技术卷I基础知识(原书第10版)','周立新 陈波 叶乃文 杜永萍 译',119,'机械工业出版社','2016年9月第1版','Java程序设计、计算机科学','d:\\book\\Java核心技术卷I基础知识(原书第10版).pdf','T','on'),(6,'9787111349662','深入理解Java虚拟机JVM高级特性与最佳实践','周志明',69,'机械工业出版社','2011年9月第1版','Java语言程序设计、JVM、Java虚拟机','d:\\book\\深入理解Java虚拟机JVM高级特性与最佳实践.pdf','T','on');
 ```
 # 八、功能演示
-## 1、客户端
+## 8.1 客户端
 
-1. 用户登录：用户登录时先在客户端检查用户名和密码是否为空，若存在为空则提示用户重新输入
+### 8.1.1 用户登录
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/38d719d381414cd5bb80872c2c7c21ec.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU3ByaW5nLV8tQmVhcg==,size_11,color_FFFFFF,t_70,g_se,x_16#pic_center)
+1. 非空校验：用户登录时先在客户端检查用户名和密码是否为空，若存在为空则提示用户重新输入。
+
+![在这里插入图片描述](document/img/用户登录-非空校验.png)
 
 
-2. 用户登录：请求服务器验证用户输入的用户名与密码，若用户名不存在或用户名与密码不匹配，则提示用户信息错误，检查后重新输入或进行注册
+2. 用户名不存在或密码错误：请求服务器验证用户输入的用户名与密码，若用户名不存在或用户名与密码不匹配，则提示用户信息错误，检查后重新输入或进行注册。
 
     ```java
     String sql = "SELECT username, password FROM User WHERE username = ? AND password = ?;";
     ```
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/8872fd791fa4426486da7773b1231294.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU3ByaW5nLV8tQmVhcg==,size_11,color_FFFFFF,t_70,g_se,x_16#pic_center)
+![在这里插入图片描述](document/img/用户登录-密码错误.png)
 
+3. 登录成功：用户注册成功，输入正确的用户名密码，登录成功，进入服务系统。
 
-3. 用户注册：先在客户端检查每一项注册信息都不允许为空，存在为空的信息则提示用户重新输入
+![在这里插入图片描述](document/img/登录成功.png)
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/fa49376e3d5c43cca99f814d6b06d8a2.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU3ByaW5nLV8tQmVhcg==,size_14,color_FFFFFF,t_70,g_se,x_16#pic_center)
+### 8.1.2 用户注册
 
+1. 非空校验：先在客户端检查每一项注册信息都不允许为空，存在为空的信息则提示用户重新输入。
 
-4. 用户注册：当用户输入的所有注册信息内容都不为空时，客户端利用正则表达式对每一项内容进行合法性校验，如用户名必须只包含英文字母、数字或下划线且必须由英文字母开头、密码位数必须大于等于 6 位、两次输入的密码必须一致等等，存在格式非法的内容则提示用户检查后重新输入
+![在这里插入图片描述](document/img/用户注册-非空校验.png)
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/14de4bb08ad14178a97d92ee18481406.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU3ByaW5nLV8tQmVhcg==,size_14,color_FFFFFF,t_70,g_se,x_16#pic_center)
+2. 格式校验：当用户输入的所有注册信息内容都不为空时，客户端利用正则表达式对每一项内容进行合法性校验，如用户名必须只包含英文字母、数字或下划线且必须由英文字母开头、密码位数必须大于等于 6 位、两次输入的密码必须一致等等，存在格式非法的内容则提示用户检查后重新输入。
 
+![在这里插入图片描述](document/img/用户注册-格式校验.png)
 
-5. 用户注册：当用户输入的所有信息均不为空且符合格式要求的情况下，请求服务器验证用户输入的用户名是否存在，若存在则提示当前用户名已存在，提示用户重新输入用户名
+3. 用户名已存在：当用户输入的所有信息均不为空且符合格式要求的情况下，请求服务器验证用户输入的用户名是否存在，若存在则提示当前用户名已存在，提示用户重新输入用户名。
 
-    ```java
-    String sql = "SELECT username FROM User WHERE username = ?;";
-    ```
+   ```java
+   String sql = "SELECT username FROM User WHERE username = ?;";
+   ```
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/4d067295e4704376afbfd3e31cae1a48.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU3ByaW5nLV8tQmVhcg==,size_14,color_FFFFFF,t_70,g_se,x_16#pic_center)
+![在这里插入图片描述](document/img/用户注册-用户名已存在.png)
 
 
-6. 用户注册：在第（5）步的基础上，检查用户输入的注册码是否合法即数据库注册码表中是否存在相同的注册码且处于未使用状态，若合法则用户注册成功，否则提示用户注册码不存在，提示用户需先联系管理员获取注册码
+4. 注册码不存在：在第（5）步的基础上，检查用户输入的注册码是否合法即数据库注册码表中是否存在相同的注册码且处于未使用状态，若合法则用户注册成功，否则提示用户注册码不存在，提示用户需先联系管理员获取注册码。
 
-    ```java
-    String sql = "SELECT registerCode FROM Code WHERE registerCode = ? AND codeState = 'unused';";
-    ```
+   ```sql
+   String sql = "SELECT registerCode FROM Code WHERE registerCode = ? AND codeState = 'unused';";
+   ```
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/d8a1258babb040d9b2e616b6f2617ec9.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU3ByaW5nLV8tQmVhcg==,size_14,color_FFFFFF,t_70,g_se,x_16#pic_center)
+![在这里插入图片描述](document/img/用户注册-注册码不存在.png)
 
+5. 注册成功：在第（6）的基础上，用户输入有效的注册码，注册成功，提醒用户返回登录，注册成功的同时用户数据表中的触发器 update_code_state 自动修改对应注册码状态为已使用。
 
-7. 用户注册：在第（6）的基础上，用户输入有效的注册码，注册成功，提醒用户返回登录，注册成功的同时用户数据表中的触发器 update_code_state 自动修改对应注册码状态为已使用
+   ```java
+   String sql = "INSERT INTO User(username,password,name,sex,idCard,phone,mail,registerCode) VALUES(?,?,?,?,?,?,?,?);";
+   ```
 
-    ```java
-    String sql = "INSERT INTO User(username,password,name,sex,idCard,phone,mail,registerCode) VALUES(?,?,?,?,?,?,?,?);";
-    ```
+![在这里插入图片描述](document/img/注册成功.png)
 
+### 8.1.3 图书检索
 
+用户根据需要的图书信息输入不同的检索条件进行查询，也可查询所有图书信息，此时客户端发送请求图书信息请求到服务器，服务器根据不同的请求不同的检索条件从图书视图中查询后返回不同的图书信息，客户端处理图书信息格式后显示。
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/a707010f508e465dbb665d336536de43.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU3ByaW5nLV8tQmVhcg==,size_14,color_FFFFFF,t_70,g_se,x_16#pic_center)
+```java
+String sql = "SELECT * FROM view_book;";
+String sql = "SELECT * FROM view_book WHERE title LIKE ? AND bookState = 'on';";
+String sql = "SELECT * FROM view_book WHERE author LIKE ? AND bookState = 'on';";
+String sql = "SELECT * FROM view_book WHERE category = ? AND bookState = 'on';";
+String sql = "SELECT * FROM view_book WHERE keyword LIKE ? AND bookState = 'on';";
+```
 
+![在这里插入图片描述](document/img/图书检索.png)
 
-8. 用户登录：用户注册成功，输入正确的用户名密码，登录成功，进入服务系统
+### 8.1.4 图书下载
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/befced499cfc47a5a8354540131a8e15.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU3ByaW5nLV8tQmVhcg==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center)
+1. 选择图书：用户根据从服务器请求到的图书信息，选择自己想要的图书信息，而后立即下载，若用户未选择任何图书，则提示用户先选择图书而后再行下载。
 
+![在这里插入图片描述](document/img/选择图书.png)
 
-9. 图书检索：用户根据需要的图书信息输入不同的检索条件进行查询，也可查询所有图书信息，此时客户端发送请求图书信息请求到服务器，服务器根据不同的请求不同的检索条件从图书视图中查询后返回不同的图书信息，客户端处理图书信息格式后显示
+2. 下载图书：用户选择图书并进行下载，提示用户选择图书保存位置，若保存路径无效则图书下载失败。服务器根据用户选择的图书信息，从数据库表中查询出当前图书的保存路径，根据路径从磁盘加载文件而后发送到客户端，客户端接收服务器的文件数据并进行保存。
 
-    ```java
-    String sql = "SELECT * FROM view_book;";
-    String sql = "SELECT * FROM view_book WHERE title LIKE ? AND bookState = 'on';";
-    String sql = "SELECT * FROM view_book WHERE author LIKE ? AND bookState = 'on';";
-    String sql = "SELECT * FROM view_book WHERE category = ? AND bookState = 'on';";
-    String sql = "SELECT * FROM view_book WHERE keyword LIKE ? AND bookState = 'on';";
-    ```
+   ```java
+   String sql = "SELECT url FROM Book WHERE isbn = ?;";
+   ```
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/65a0949c326243d396929bf0ae54ea36.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU3ByaW5nLV8tQmVhcg==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center)
+   - 选择图书保存路径
 
-10. 图书下载：用户根据从服务器请求到的图书信息，选择自己想要的图书信息，而后立即下载，若用户未选择任何图书，则提示用户先选择图书而后再行下载
+     ![](document/img/选择路径.png)
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/1151bbb7f0a24305b63bbe8bb165abad.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU3ByaW5nLV8tQmVhcg==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center)
+   - 图书下载并保存成功：用户成功下载一本图书的同时，自动为用户添加下载记录。
 
+     ![在这里插入图片描述](document/img/下载成功.png)
 
-11. 图书下载：用户选择图书并进行下载，提示用户选择图书保存位置，若保存路径无效则图书下载失败。服务器根据用户选择的图书信息，从数据库表中查询出当前图书的保存路径，根据路径从磁盘加载文件而后发送到客户端，客户端接收服务器的文件数据并进行保存
+   ### 8.1.5 下载记录
 
-    ```java
-    String sql = "SELECT url FROM Book WHERE isbn = ?;";
-    ```
-- 选择图书保存路径
+   查询用户下载记录，客户端向服务器发出根据登录服务系统用户名查询当前用户的下载记录，若不存在该用户的下载记录则提示用户暂无下载记录，否则显示从服务器查询到的所有该用户的下载记录。
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/c7fb284a79444e628119c5cac132efd8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU3ByaW5nLV8tQmVhcg==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center)
+   ```java
+   String sql = "SELECT * FROM Record WHERE username = ?;";
+   ```
 
-- 图书下载并保存成功
+![在这里插入图片描述](document/img/下载记录.png)
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/c927ece03f524adba38f1522eed67c9e.png#pic_center)
+### 8.1.6 收藏图书
 
-12. 保存下载记录：用户成功下载一本图书的同时，自动为用户添加下载记录
+当用户从服务器查询到需要的图书信息时，也可选择加入到个人收藏夹，提示用户先选择想要加入到收藏夹的图书，若收藏夹中已存在对应的图书记录，则提示用户不能重复收藏。
 
-    ```java
-    String sql = "INSERT INTO Record(title,author,time,username) VALUES (?,?,?,?);";
-    ```
+```java
+String sql = "INSERT INTO Record(title,author,time,username) VALUES (?,?,?,?);";
+```
 
-13. 查询用户下载记录，客户端向服务器发出根据登录服务系统用户名查询当前用户的下载记录，若不存在该用户的下载记录则提示用户暂无下载记录，否则显示从服务器查询到的所有该用户的下载记录
+1. 收藏成功：用户添加图书信息到个人收藏夹成功。
 
-    ```java
-    String sql = "SELECT * FROM Record WHERE username = ?;";
-    ```
+![在这里插入图片描述](document/img/收藏图书.png)
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/b80090b6768d421cab5617c48e3a148d.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU3ByaW5nLV8tQmVhcg==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center)
+2. 收藏失败：一个用户不能重复收藏同一条图书记录。
 
-14. 收藏图书：当用户从服务器查询到需要的图书信息时，也可选择加入到个人收藏夹，提示用户先选择想要加入到收藏夹的图书，若收藏夹中已存在对应的图书记录，则提示用户不能重复收藏
-    ```java
-    String sql = "INSERT INTO Record(title,author,time,username) VALUES (?,?,?,?);";
-    ```
-- 收藏成功：用户添加图书信息到个人收藏夹成功
+![在这里插入图片描述](document/img/收藏失败.png)
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/733274cffc384baba9ab67acd474bf03.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU3ByaW5nLV8tQmVhcg==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center)
-- 收藏失败：一个用户不能重复收藏同一条图书记录
+3. 取消收藏：用户选择个人收藏夹中想要取消收藏的图书信息。
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/08c3b1b908ed400a830e52f876a062fc.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU3ByaW5nLV8tQmVhcg==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center)
+   ```sql
+   String sql = "SELECT * FROM Favorite WHERE username = ?;";
+   String sql = "DELETE FROM Favorite WHERE isbn = ? AND username = ?;";
+   ```
 
+   ![在这里插入图片描述](document/img/取消收藏.png)
 
+### 8.1.7 图书上传
 
-15. 取消收藏：用户选择个人收藏夹中想要取消收藏的图书信息
+客户端用户选择图书文件，客户端加载后将图书数据发送的服务器，服务器接收图书数据并保存到服务器云盘。
 
-    ```java
-    String sql = "SELECT * FROM Favorite WHERE username = ?;";
-    String sql = "DELETE FROM Favorite WHERE isbn = ? AND username = ?;";
-    ```
+1. 选择文件路径
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/f25cf7ab4fa44bd8890cc7140881d250.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU3ByaW5nLV8tQmVhcg==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center)
+![在这里插入图片描述](document/img/选择图书文件.png)
 
+2. 图书上传成功
 
-16. 图书上传：客户端用户选择图书文件，客户端加载后将图书数据发送的服务器，服务器接收图书数据并保存到服务器云盘
+![在这里插入图片描述](document/img/上传成功.png)
 
-- 选择文件路径
+### 8.1.9 账号管理
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/1e72fd0351864319b7058973831a7757.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU3ByaW5nLV8tQmVhcg==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center)
+个人信息修改，若个人信息未发生变更则不允许修改，发送用户修改请求和修改后的信息到服务器，服务器更新相关数据表的用户信息。
 
-- 图书上传成功
+```sql
+String sql = "SELECT * FROM User WHERE username = ?;";
+String sql = "UPDATE User SET password = ?, phone = ?, mail = ? WHERE username = ?;";
+```
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/6cd9729baffb4bdfa40894b0d5d77b1b.png#pic_center)
+1. 信息未变更，不能修改
 
+![在这里插入图片描述](document/img/个人信息未变更.png)
 
+2. 个人信息修改成功
 
-17. 账号管理：个人信息修改，若个人信息未发生变更则不允许修改，发送用户修改请求和修改后的信息到服务器，服务器更新相关数据表的用户信息
+![在这里插入图片描述](document/img/个人信息修改成功.png)
 
-    ```sql
-    String sql = "SELECT * FROM User WHERE username = ?;";
-    String sql = "UPDATE User SET password = ?, phone = ?, mail = ? WHERE username = ?;";
-    ```
+3. 用户注销：用户选择注销账户，再次确认是否注销，确认注销则发送用户注销请求到服务器，服务器从用户信息表中删除相关用户信息，删除该用户的所有下载记录以及收藏记录，返回用户登录界面。
 
-- 信息未变更，不能修改
+   ```java
+   String sql = "DELETE FROM Favorite WHERE username = ?;";
+   String sql = "DELETE FROM User WHERE username = ?;";
+   String sql = "DELETE FROM Record WHERE username = ?;";
+   ```
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/f179df16f538437785b4cf2135fff35f.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU3ByaW5nLV8tQmVhcg==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center)
+   - 确认注销：提示用户是否注销
 
-- 个人信息修改成功
+   ![在这里插入图片描述](document/img/账号注销提示.png)
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/f5d5ee074bf84169a464f7d4dc654a67.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU3ByaW5nLV8tQmVhcg==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center)
+   - 用户注销成功
 
-18. 用户注销：用户选择注销账户，再次确认是否注销，确认注销则发送用户注销请求到服务器，服务器从用户信息表中删除相关用户信息，删除该用户的所有下载记录以及收藏记录，返回用户登录界面
+   ![在这里插入图片描述](document/img/账号注销成功.png)
 
-    ```java
-    String sql = "DELETE FROM Favorite WHERE username = ?;";
-    String sql = "DELETE FROM User WHERE username = ?;";
-    String sql = "DELETE FROM Record WHERE username = ?;";
-    ```
+## 8.2 服务端
 
-- 确认注销：提示用户是否注销
+### 8.2.1 响应请求
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/91d96adf5ae747ecb58e27de60d9d616.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU3ByaW5nLV8tQmVhcg==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center)
+响应客户端的各种请求，分类处理请求，控制台打印客户端的请求信息。
 
-- 用户注销成功
+![在这里插入图片描述](document/img/响应请求.png)
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/6f7b32d641594b03bd751def3b31b685.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU3ByaW5nLV8tQmVhcg==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center)
+### 8.2.2 新增图书
 
+新增图书信息到数据库图书信息表。
 
+```java
+String sql = "INSERT INTO Book(isbn, title, author, price, publisher, edition, keyword, url, category, bookState) VALUES(?,?,?,?,?,?,?,?,?,?);";
+```
+![在这里插入图片描述](document/img/新增图书.png)
 
-## 2、服务端
+### 8.2.3 新增注册码
 
-1. 响应客户端的各种请求，分类处理请求，控制台打印客户端的请求信息
+以事务批处理方式添加随机生成的注册码到数据库注册码信息表，添加成功则提交事务，否则回滚事务，并且修改自增 id 为事务开始前的值。
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/eb80caa9f34243cfb81bd2783d1f5e92.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU3ByaW5nLV8tQmVhcg==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center)
+```java
+// 关闭自动提交，开启事务
+connection.setAutoCommit(false);
+// 注册码不存在重复的情况下全部插入成功则提交事务，否则回滚并修改自增 id 的值为事务开始前的值
+if (paramsCounts == updateSuccessCounts) {
+    connection.commit();
+    return true;
+} else {
+    connection.rollback();
+    codeService.resetToOldId(oldId);
+}
 
+String sql = "INSERT INTO Code(registerCode) VALUES(?);";
+String sql = "SELECT MAX(codeId) FROM Code FOR UPDATE;";
+String sql = "ALTER TABLE Code AUTO_INCREMENT = ?";
+```
 
-2. 新增图书信息到数据库图书信息表
-    ```java
-    String sql = "INSERT INTO Book(isbn, title, author, price, publisher, edition, keyword, url, category, bookState) VALUES(?,?,?,?,?,?,?,?,?,?);";
-    ```
-    ![在这里插入图片描述](https://img-blog.csdnimg.cn/8eeada1a69de4bca844c342923271553.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU3ByaW5nLV8tQmVhcg==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center)
+1. 添加注册码成功
 
-3. 以事务批处理方式添加随机生成的注册码到数据库注册码信息表，添加成功则提交事务，否则回滚事务，并且修改自增 id 为事务开始前的值
+![在这里插入图片描述](document/img/批量添加注册码成功.png)
 
-    ```java
-    // 关闭自动提交，开启事务
-    connection.setAutoCommit(false);
-    // 注册码不存在重复的情况下全部插入成功则提交事务，否则回滚并修改自增 id 的值为事务开始前的值
-    if (paramsCounts == updateSuccessCounts) {
-        connection.commit();
-        return true;
-    } else {
-        connection.rollback();
-        codeService.resetToOldId(oldId);
-    }
-    
-    String sql = "INSERT INTO Code(registerCode) VALUES(?);";
-    String sql = "SELECT MAX(codeId) FROM Code FOR UPDATE;";
-    String sql = "ALTER TABLE Code AUTO_INCREMENT = ?";
-    ```
+2. 添加注册码失败
 
-- 添加注册码成功
+![在这里插入图片描述](document/img/批量添加注册码失败.png)
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/e3f77b4e084248bd9911be76ca18a565.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU3ByaW5nLV8tQmVhcg==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center)
+### 8.2.4 数据备份
 
-- 添加注册码失败
+备份数据库中的所有数据到指定路径，同时备份数据库数据和数据表结构。
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/402fef99dc1249bd8aa01c93e9e93555.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU3ByaW5nLV8tQmVhcg==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center)
+```java
+// Combining the parameters into a command
+String command = "mysqldump -h" + serverIp + " -u" + username + " -p" + password + " -B " + dbName + " > " + fileSavePath + "\\" + dbName + ".sql";
+try {
+    Runtime.getRuntime().exec("cmd /c" + command);
+    JOptionPane.showMessageDialog(null, "Database backup successfully", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
+} catch (IOException e) {
+    e.printStackTrace();
+    JOptionPane.showMessageDialog(null, "Database backup failed, try again later", "ERROR", JOptionPane.ERROR_MESSAGE);
+}
+```
 
-4. 备份数据库中的所有数据到指定路径，同时备份数据库数据和数据表结构
+1. 选择备份文件保存路径
 
-    ```java
-    // Combining the parameters into a command
-    String command = "mysqldump -h" + serverIp + " -u" + username + " -p" + password + " -B " + dbName + " > " + fileSavePath + "\\" + dbName + ".sql";
-    try {
-        Runtime.getRuntime().exec("cmd /c" + command);
-        JOptionPane.showMessageDialog(null, "Database backup successfully", "SUCCESS", JOptionPane.INFORMATION_MESSAGE);
-    } catch (IOException e) {
-        e.printStackTrace();
-        JOptionPane.showMessageDialog(null, "Database backup failed, try again later", "ERROR", JOptionPane.ERROR_MESSAGE);
-    }
-    ```
+![在这里插入图片描述](document/img/选择 SQL 脚本保存目录.png)
 
-- 选择备份文件保存路径
+2. 数据库备份成功，对应目录生成数据库备份文件
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/affcdeef531348aea3a53a5c43ce63b3.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU3ByaW5nLV8tQmVhcg==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center)
+![在这里插入图片描述](document/img/备份成功.png)
 
-- 数据库备份成功，对应目录生成数据库备份文件
+# 九、许可证
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/c43f1be7aa5043a99c3dfce1042dafc9.png#pic_center)
+```
+MIT License
+
+Copyright (c) 2023 Spring-_-Bear
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
