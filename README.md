@@ -516,7 +516,7 @@ INSERT INTO `book` VALUES (1,'9787111213826','Java编程思想(第4版)','陈昊
 
 1. 非空校验：用户登录时先在客户端检查用户名和密码是否为空，若存在为空则提示用户重新输入。
 
-![在这里插入图片描述](document/img/用户登录-非空校验.png)
+   ![在这里插入图片描述](document/img/用户登录-非空校验.png)
 
 
 2. 用户名不存在或密码错误：请求服务器验证用户输入的用户名与密码，若用户名不存在或用户名与密码不匹配，则提示用户信息错误，检查后重新输入或进行注册。
@@ -524,30 +524,30 @@ INSERT INTO `book` VALUES (1,'9787111213826','Java编程思想(第4版)','陈昊
     ```java
     String sql = "SELECT username, password FROM User WHERE username = ? AND password = ?;";
     ```
-
-![在这里插入图片描述](document/img/用户登录-密码错误.png)
+    
+    ![在这里插入图片描述](document/img/用户登录-密码错误.png)
 
 3. 登录成功：用户注册成功，输入正确的用户名密码，登录成功，进入服务系统。
 
-![在这里插入图片描述](document/img/登录成功.png)
+   ![在这里插入图片描述](document/img/登录成功.png)
 
 ### 8.1.2 用户注册
 
 1. 非空校验：先在客户端检查每一项注册信息都不允许为空，存在为空的信息则提示用户重新输入。
 
-![在这里插入图片描述](document/img/用户注册-非空校验.png)
+   ![在这里插入图片描述](document/img/用户注册-非空校验.png)
 
 2. 格式校验：当用户输入的所有注册信息内容都不为空时，客户端利用正则表达式对每一项内容进行合法性校验，如用户名必须只包含英文字母、数字或下划线且必须由英文字母开头、密码位数必须大于等于 6 位、两次输入的密码必须一致等等，存在格式非法的内容则提示用户检查后重新输入。
 
-![在这里插入图片描述](document/img/用户注册-格式校验.png)
+   ![在这里插入图片描述](document/img/用户注册-格式校验.png)
 
 3. 用户名已存在：当用户输入的所有信息均不为空且符合格式要求的情况下，请求服务器验证用户输入的用户名是否存在，若存在则提示当前用户名已存在，提示用户重新输入用户名。
 
    ```java
    String sql = "SELECT username FROM User WHERE username = ?;";
    ```
-
-![在这里插入图片描述](document/img/用户注册-用户名已存在.png)
+   
+   ![在这里插入图片描述](document/img/用户注册-用户名已存在.png)
 
 
 4. 注册码不存在：在第（5）步的基础上，检查用户输入的注册码是否合法即数据库注册码表中是否存在相同的注册码且处于未使用状态，若合法则用户注册成功，否则提示用户注册码不存在，提示用户需先联系管理员获取注册码。
@@ -555,16 +555,16 @@ INSERT INTO `book` VALUES (1,'9787111213826','Java编程思想(第4版)','陈昊
    ```sql
    String sql = "SELECT registerCode FROM Code WHERE registerCode = ? AND codeState = 'unused';";
    ```
-
-![在这里插入图片描述](document/img/用户注册-注册码不存在.png)
+   
+   ![在这里插入图片描述](document/img/用户注册-注册码不存在.png)
 
 5. 注册成功：在第（6）的基础上，用户输入有效的注册码，注册成功，提醒用户返回登录，注册成功的同时用户数据表中的触发器 update_code_state 自动修改对应注册码状态为已使用。
 
    ```java
    String sql = "INSERT INTO User(username,password,name,sex,idCard,phone,mail,registerCode) VALUES(?,?,?,?,?,?,?,?);";
    ```
-
-![在这里插入图片描述](document/img/注册成功.png)
+   
+   ![在这里插入图片描述](document/img/注册成功.png)
 
 ### 8.1.3 图书检索
 
@@ -584,7 +584,7 @@ String sql = "SELECT * FROM view_book WHERE keyword LIKE ? AND bookState = 'on';
 
 1. 选择图书：用户根据从服务器请求到的图书信息，选择自己想要的图书信息，而后立即下载，若用户未选择任何图书，则提示用户先选择图书而后再行下载。
 
-![在这里插入图片描述](document/img/选择图书.png)
+   ![在这里插入图片描述](document/img/选择图书.png)
 
 2. 下载图书：用户选择图书并进行下载，提示用户选择图书保存位置，若保存路径无效则图书下载失败。服务器根据用户选择的图书信息，从数据库表中查询出当前图书的保存路径，根据路径从磁盘加载文件而后发送到客户端，客户端接收服务器的文件数据并进行保存。
 
@@ -602,7 +602,7 @@ String sql = "SELECT * FROM view_book WHERE keyword LIKE ? AND bookState = 'on';
 
 ### 8.1.5 下载记录
 
-   查询用户下载记录，客户端向服务器发出根据登录服务系统用户名查询当前用户的下载记录，若不存在该用户的下载记录则提示用户暂无下载记录，否则显示从服务器查询到的所有该用户的下载记录。
+查询用户下载记录，客户端向服务器发出根据登录服务系统用户名查询当前用户的下载记录，若不存在该用户的下载记录则提示用户暂无下载记录，否则显示从服务器查询到的所有该用户的下载记录。
 
    ```java
    String sql = "SELECT * FROM Record WHERE username = ?;";
@@ -620,11 +620,11 @@ String sql = "INSERT INTO Record(title,author,time,username) VALUES (?,?,?,?);";
 
 1. 收藏成功：用户添加图书信息到个人收藏夹成功。
 
-![在这里插入图片描述](document/img/收藏图书.png)
+   ![在这里插入图片描述](document/img/收藏图书.png)
 
 2. 收藏失败：一个用户不能重复收藏同一条图书记录。
 
-![在这里插入图片描述](document/img/收藏失败.png)
+   ![在这里插入图片描述](document/img/收藏失败.png)
 
 3. 取消收藏：用户选择个人收藏夹中想要取消收藏的图书信息。
 
@@ -641,11 +641,11 @@ String sql = "INSERT INTO Record(title,author,time,username) VALUES (?,?,?,?);";
 
 1. 选择文件路径
 
-![在这里插入图片描述](document/img/选择图书文件.png)
+   ![在这里插入图片描述](document/img/选择图书文件.png)
 
 2. 图书上传成功
 
-![在这里插入图片描述](document/img/上传成功.png)
+   ![在这里插入图片描述](document/img/上传成功.png)
 
 ### 8.1.8 账号管理
 
@@ -658,11 +658,11 @@ String sql = "UPDATE User SET password = ?, phone = ?, mail = ? WHERE username =
 
 1. 信息未变更，不能修改
 
-![在这里插入图片描述](document/img/个人信息未变更.png)
+   ![在这里插入图片描述](document/img/个人信息未变更.png)
 
 2. 个人信息修改成功
 
-![在这里插入图片描述](document/img/个人信息修改成功.png)
+   ![在这里插入图片描述](document/img/个人信息修改成功.png)
 
 3. 用户注销：用户选择注销账户，再次确认是否注销，确认注销则发送用户注销请求到服务器，服务器从用户信息表中删除相关用户信息，删除该用户的所有下载记录以及收藏记录，返回用户登录界面。
 
@@ -674,11 +674,12 @@ String sql = "UPDATE User SET password = ?, phone = ?, mail = ? WHERE username =
 
    - 确认注销：提示用户是否注销
 
-   ![在这里插入图片描述](document/img/账号注销提示.png)
+     ![在这里插入图片描述](document/img/账号注销提示.png)
 
    - 用户注销成功
 
-   ![在这里插入图片描述](document/img/账号注销成功.png)
+     ![在这里插入图片描述](document/img/账号注销成功.png)
+   
 
 ## 8.2 服务端
 
@@ -720,11 +721,11 @@ String sql = "ALTER TABLE Code AUTO_INCREMENT = ?";
 
 1. 添加注册码成功
 
-![在这里插入图片描述](document/img/批量添加注册码成功.png)
+   ![在这里插入图片描述](document/img/批量添加注册码成功.png)
 
 2. 添加注册码失败
 
-![在这里插入图片描述](document/img/批量添加注册码失败.png)
+   ![在这里插入图片描述](document/img/批量添加注册码失败.png)
 
 ### 8.2.4 数据备份
 
@@ -744,11 +745,11 @@ try {
 
 1. 选择备份文件保存路径
 
-![在这里插入图片描述](document/img/选择SQL脚本保存目录.png)
+   ![在这里插入图片描述](document/img/选择SQL脚本保存目录.png)
 
 2. 数据库备份成功，对应目录生成数据库备份文件
 
-![在这里插入图片描述](document/img/备份成功.png)
+   ![在这里插入图片描述](document/img/备份成功.png)
 
 # 九、许可证
 
@@ -775,4 +776,3 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-
