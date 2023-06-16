@@ -107,7 +107,7 @@
 
 ## 5.3 实体关系图
 
-![在这里插入图片描述](document/img/E-R 图.png)
+![在这里插入图片描述](document/img/E-R图.png)
 
 
 # 六、数据库逻辑结构设计
@@ -600,7 +600,7 @@ String sql = "SELECT * FROM view_book WHERE keyword LIKE ? AND bookState = 'on';
 
      ![在这里插入图片描述](document/img/下载成功.png)
 
-   ### 8.1.5 下载记录
+### 8.1.5 下载记录
 
    查询用户下载记录，客户端向服务器发出根据登录服务系统用户名查询当前用户的下载记录，若不存在该用户的下载记录则提示用户暂无下载记录，否则显示从服务器查询到的所有该用户的下载记录。
 
@@ -647,7 +647,7 @@ String sql = "INSERT INTO Record(title,author,time,username) VALUES (?,?,?,?);";
 
 ![在这里插入图片描述](document/img/上传成功.png)
 
-### 8.1.9 账号管理
+### 8.1.8 账号管理
 
 个人信息修改，若个人信息未发生变更则不允许修改，发送用户修改请求和修改后的信息到服务器，服务器更新相关数据表的用户信息。
 
@@ -744,7 +744,7 @@ try {
 
 1. 选择备份文件保存路径
 
-![在这里插入图片描述](document/img/选择 SQL 脚本保存目录.png)
+![在这里插入图片描述](document/img/选择SQL脚本保存目录.png)
 
 2. 数据库备份成功，对应目录生成数据库备份文件
 
