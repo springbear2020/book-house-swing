@@ -53,11 +53,11 @@ public class LoginFrame extends JFrame {
         lblPwd.setFont(new Font("SimSun", Font.PLAIN, 20));
         lblPwd.setBounds(30, 125, 80, 40);
         contentPane.add(lblPwd);
-        textUsername = new JTextField();
+        textUsername = new JTextField("admin");
         textUsername.setFont(new Font("SimSun", Font.PLAIN, 20));
         textUsername.setBounds(124, 45, 235, 40);
         contentPane.add(textUsername);
-        textPwd = new JPasswordField();
+        textPwd = new JPasswordField("admin");
         textPwd.setFont(new Font("SimSun", Font.PLAIN, 20));
         textPwd.setBounds(124, 125, 235, 40);
         contentPane.add(textPwd);

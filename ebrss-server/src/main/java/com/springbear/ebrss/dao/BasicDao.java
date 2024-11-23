@@ -27,6 +27,7 @@ public class BasicDao<T> {
      * @return Affected rows
      */
     public int update(String sql, Object[] params) {
+        sql = sql.toLowerCase();
         Connection connection = null;
         try {
             connection = DruidUtil.getConnection();
@@ -48,6 +49,7 @@ public class BasicDao<T> {
      * @return Multi rows record or null
      */
     public List<T> listRecords(String sql, Class<T> clazz, Object[] params) {
+        sql = sql.toLowerCase();
         Connection connection = null;
         try {
             connection = DruidUtil.getConnection();
@@ -68,6 +70,7 @@ public class BasicDao<T> {
      * @return One record
      */
     public T getRecord(String sql, Class<T> clazz, Object[] params) {
+        sql = sql.toLowerCase();
         Connection connection = null;
         try {
             connection = DruidUtil.getConnection();
@@ -87,6 +90,7 @@ public class BasicDao<T> {
      * @return One cell object
      */
     public Object getCell(String sql, Object[] params) {
+        sql = sql.toLowerCase();
         Connection connection = null;
         try {
             connection = DruidUtil.getConnection();
